@@ -1,8 +1,10 @@
 (function() {
 	var cache = document.rocketBarCache;
 
+	/* We need to compile a list of searchable titles first */
 	var searchable = [];
 
+	// Compiling Page
 	for(var id in cache.pages) {
 		if(cache.pages.hasOwnProperty(id)) {
 			var page = cache.pages[id];
@@ -12,6 +14,7 @@
 		}
 	}
 
+	// Compiling Categories
 	for(id in cache.taxonomies) {
 		if(cache.taxonomies.hasOwnProperty(id)) {
 			var tax = cache.taxonomies[id];
@@ -21,6 +24,7 @@
 		}
 	}
 
+	// Compiling Menu Pages
 	var menusNamesBySlug = {};
 
 	for(var priority in cache.menu) {
@@ -37,21 +41,34 @@
 		}
 	}
 
-	console.log(cache.menu);
-	console.log(cache.submenu);
-
 	for(var slug in cache.submenu) {
 		if(cache.submenu.hasOwnProperty(slug)) {
 			var submenus = cache.submenu[slug],
 				menuName = menusNamesBySlug[slug];
 
-			searchable.push(menuName + ' &rarr; ' + ' Submenu');
+			for(id in submenus) {
+				if(submenus.hasOwnProperty(id)) {
+					var submenu = submenus[id];
+
+					name = submenu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
+
+					if(name.length) {
+						submenu.searchableIndex = searchable.length;
+						searchable.push(menuName + ' &rarr; ' + submenu[0]);
+					}
+				}
+			}
 		}
 	}
 
-	console.log(searchable);
+	// Done compiling!
+
+	var findByIndex = function(i) {
+
+	};
 
 	document.findMatches = function(pat) {
-		return searchable.fuzzyMatches(pat);
+		var matches = searchable.fuzzyMatches(pat);
+
 	};
 })();
