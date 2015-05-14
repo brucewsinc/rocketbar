@@ -11,6 +11,7 @@ class admin {
 		global $menu, $submenu;
 
 		// TODO save the menu and submenu globals here, in a way that can be referenced later.
-		//var_dump($menu);
+		file_put_contents(dirname(__FILE__) . '/log.txt', print_r($menu, TRUE));
+		file_put_contents(dirname(__FILE__) . '/log.txt', print_r($submenu, TRUE), FILE_APPEND);
 	}
 }
