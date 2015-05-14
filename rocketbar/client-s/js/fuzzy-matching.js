@@ -35,7 +35,7 @@
 		});
 
 		results = results.sort(function(a, b) {
-			return a.priority - b.priority;
+			return b.priority - a.priority;
 		});
 
 		return results;
