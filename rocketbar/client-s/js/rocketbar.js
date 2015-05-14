@@ -9,6 +9,7 @@
 		if(cache.pages.hasOwnProperty(id)) {
 			var page = cache.pages[id];
 			page.searchableIndex = searchable.length;
+			page.iconHTML = '<div class="wp-menu-image dashicons-before dashicons-admin-page"><br></div>';
 
 			searchable.push(page.title);
 		}
@@ -19,27 +20,29 @@
 		if(cache.taxonomies.hasOwnProperty(id)) {
 			var tax = cache.taxonomies[id];
 			tax.searchableIndex = searchable.length;
+			tax.iconHTML = '<div class="wp-menu-image dashicons-before dashicons-admin-post"><br></div>';
 
 			searchable.push(tax.title);
 		}
 	}
 
 	// Compiling Menu Pages
-	var menusNamesBySlug = {};
+	var menuNamesBySlug = {},
+		menuIconsBySlug = {};
 
 	for(var priority in cache.menu) {
-		var icon = 'test';
-
 		if(cache.menu.hasOwnProperty(priority)) {
 			var menu = cache.menu[priority];
 			menu.searchableIndex = searchable.length;
-			menu.icon = icon;
 
 			if(menu[0].length) {
 				var name = menu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 
 				searchable.push(name); // Some menus have HTML in them, and a trailing number
-				menusNamesBySlug[menu[2]] = name;
+				menuNamesBySlug[menu[2]] = name;
+
+				// Generate icon HTML
+				menuIconsBySlug[menu[2]] = '';
 			}
 		}
 	}
@@ -47,7 +50,7 @@
 	for(var slug in cache.submenu) {
 		if(cache.submenu.hasOwnProperty(slug)) {
 			var submenus = cache.submenu[slug],
-				menuName = menusNamesBySlug[slug];
+				menuName = menuNamesBySlug[slug];
 
 			for(id in submenus) {
 				if(submenus.hasOwnProperty(id)) {
@@ -57,6 +60,7 @@
 
 					if(name.length) {
 						submenu.searchableIndex = searchable.length;
+						submenu.iconHTML = menuIconsBySlug[slug];
 						searchable.push(menuName + ' &rarr; ' + name);
 					}
 				}
@@ -86,9 +90,18 @@
 	document.findMatches = function(pat) {
 		var matches = searchable.fuzzyMatches(pat);
 
-		var match = matches[0],
-			index = searchable.indexOf(match.text);
+		matches.forEach(function(o, i) {
+			var index = searchable.indexOf(o.text);
 
-		return findByIndex(index, cache).icon;
+			matches[i] = findByIndex(index, cache);
+			matches[i].txt = '';
+
+			o.text.split('').forEach(function(char, pos) {
+				if(o.matches.indexOf(pos) !== -1) matches[i].txt += '<strong>' + char + '</strong>';
+				else matches[i].txt += char;
+			});
+		});
+
+		return matches;
 	};
 })(jQuery);
