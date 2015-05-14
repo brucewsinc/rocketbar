@@ -10,7 +10,7 @@ class admin {
 	public static function get_all_pages() {
 		global $menu, $submenu;
 
-		update_site_option(get_current_blog_id(), 'rocketbar_menu_cache', $menu);
-		update_site_option(get_current_blog_id(), 'rocketbar_submenu_cache', $submenu);
+		update_site_option('rocketbar_menu_cache', $menu);
+		update_site_option('rocketbar_submenu_cache', $submenu);
 	}
 }
