@@ -10,8 +10,7 @@ class admin {
 	public static function get_all_pages() {
 		global $menu, $submenu;
 
-		// TODO save the menu and submenu globals here, in a way that can be referenced later.
-		file_put_contents(dirname(__FILE__) . '/log.txt', print_r($menu, TRUE));
-		file_put_contents(dirname(__FILE__) . '/log.txt', print_r($submenu, TRUE), FILE_APPEND);
+		update_site_option(get_current_blog_id(), 'rocketbar_menu_cache', $menu);
+		update_site_option(get_current_blog_id(), 'rocketbar_submenu_cache', $submenu);
 	}
 }

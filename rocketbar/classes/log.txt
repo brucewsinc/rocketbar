@@ -1,0 +1,599 @@
+Array
+(
+    [2] => Array
+        (
+            [0] => Dashboard
+            [1] => read
+            [2] => index.php
+            [3] => 
+            [4] => menu-top menu-top-first menu-icon-dashboard
+            [5] => menu-dashboard
+            [6] => dashicons-dashboard
+        )
+
+    [4] => Array
+        (
+            [0] => 
+            [1] => read
+            [2] => separator1
+            [3] => 
+            [4] => wp-menu-separator
+        )
+
+    [5] => Array
+        (
+            [0] => Posts
+            [1] => edit_posts
+            [2] => edit.php
+            [3] => 
+            [4] => open-if-no-js menu-top menu-icon-post
+            [5] => menu-posts
+            [6] => dashicons-admin-post
+        )
+
+    [10] => Array
+        (
+            [0] => Media
+            [1] => upload_files
+            [2] => upload.php
+            [3] => 
+            [4] => menu-top menu-icon-media
+            [5] => menu-media
+            [6] => dashicons-admin-media
+        )
+
+    [15] => Array
+        (
+            [0] => Links
+            [1] => manage_links
+            [2] => edit-tags.php?taxonomy=link_category
+            [3] => 
+            [4] => menu-top menu-icon-links
+            [5] => menu-links
+            [6] => dashicons-admin-links
+        )
+
+    [20] => Array
+        (
+            [0] => Pages
+            [1] => edit_pages
+            [2] => edit.php?post_type=page
+            [3] => 
+            [4] => menu-top menu-icon-page
+            [5] => menu-pages
+            [6] => dashicons-admin-page
+        )
+
+    [25] => Array
+        (
+            [0] => Comments <span class='awaiting-mod count-0'><span class='pending-count'>0</span></span>
+            [1] => edit_posts
+            [2] => edit-comments.php
+            [3] => 
+            [4] => menu-top menu-icon-comments
+            [5] => menu-comments
+            [6] => dashicons-admin-comments
+        )
+
+    [59] => Array
+        (
+            [0] => 
+            [1] => read
+            [2] => separator2
+            [3] => 
+            [4] => wp-menu-separator
+        )
+
+    [60] => Array
+        (
+            [0] => Appearance
+            [1] => switch_themes
+            [2] => themes.php
+            [3] => 
+            [4] => menu-top menu-icon-appearance
+            [5] => menu-appearance
+            [6] => dashicons-admin-appearance
+        )
+
+    [65] => Array
+        (
+            [0] => Plugins <span class='update-plugins count-0'><span class='plugin-count'>0</span></span>
+            [1] => activate_plugins
+            [2] => plugins.php
+            [3] => 
+            [4] => menu-top menu-icon-plugins
+            [5] => menu-plugins
+            [6] => dashicons-admin-plugins
+        )
+
+    [70] => Array
+        (
+            [0] => Users
+            [1] => list_users
+            [2] => users.php
+            [3] => 
+            [4] => menu-top menu-icon-users
+            [5] => menu-users
+            [6] => dashicons-admin-users
+        )
+
+    [75] => Array
+        (
+            [0] => Tools
+            [1] => edit_posts
+            [2] => tools.php
+            [3] => 
+            [4] => menu-top menu-icon-tools
+            [5] => menu-tools
+            [6] => dashicons-admin-tools
+        )
+
+    [80] => Array
+        (
+            [0] => Settings
+            [1] => manage_options
+            [2] => options-general.php
+            [3] => 
+            [4] => menu-top menu-icon-settings
+            [5] => menu-settings
+            [6] => dashicons-admin-settings
+        )
+
+    [99] => Array
+        (
+            [0] => 
+            [1] => read
+            [2] => separator-last
+            [3] => 
+            [4] => wp-menu-separator
+        )
+
+    [71] => Array
+        (
+            [0] => Signups
+            [1] => manage_options
+            [2] => jinx-uf-setup
+            [3] => Basic Setup | Jinx User Framework
+            [4] => menu-top menu-icon-generic toplevel_page_jinx-uf-setup
+            [5] => toplevel_page_jinx-uf-setup
+            [6] => dashicons-admin-generic
+        )
+
+    [100] => Array
+        (
+            [0] => Shippu™
+            [1] => manage_options
+            [2] => shippu-setup
+            [3] => Basic Setup | Shippu
+            [4] => menu-top toplevel_page_shippu-setup
+            [5] => toplevel_page_shippu-setup
+            [6] => data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjIzcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDIzIDIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPndpbmQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0id2luZCIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgZmlsbD0iI0VGRUZFRiI+CiAgICAgICAgICAgIDxnIGlkPSJQYWdlLTEiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTE5LjQxNDQxMjEsMy42NjkwOTQ2OSBDMTcuNDM0MTQ2NSwzLjY2OTA5NDY5IDE1LjgyODgyNDEsNS4zMDc1NjQwNSAxNS44Mjg4MjQxLDcuMzMxNjg1NzQgTDE3LjYyMTYxODEsNy4zMzE2ODU3NCBDMTcuNjIxNjE4MSw2LjMyMDI4OTE1IDE4LjQxNzM3NjIsNS41MDAzOTAyMiAxOS40MTQ0MTIxLDUuNTAwMzkwMjIgQzIwLjQwNDU0NDgsNS41MDAzOTAyMiAyMS4yMDcyMDYsNi4zMTMyMzc4NCAyMS4yMDcyMDYsNy4zMzE2ODU3NCBDMjEuMjA3MjA2LDguMzQzMDgyMzQgMjAuNDA5NjI1LDkuMTYyOTgxMjcgMTkuNDExMTg5Niw5LjE2Mjk4MTI3IEwwLjYyNSw5LjE2Mjk4MTI3IEwwLjYyNSwxMC45OTQyNzY4IEwxOS40MTU3ODI5LDEwLjk5NDI3NjggQzIxLjM5NTI5MTQsMTAuOTk0Mjc2OCAyMyw5LjM1MDM2MjkxIDIzLDcuMzMxNjg1NzQgQzIzLDUuMzA4ODkyNTYgMjEuMzkwNjQ4MSwzLjY2OTA5NDY5IDE5LjQxNDQxMjEsMy42NjkwOTQ2OSBMMTkuNDE0NDEyMSwzLjY2OTA5NDY5IFogTTE2LjI3MzUzMDIsMy42NjkwOTQ2OSBDMTYuMjczNTMwMiwxLjY0NjMwMTUxIDE0LjY2NDE3ODMsMC4wMDY1MDM2NDIwNCAxMi42ODc5NDIyLDAuMDA2NTAzNjQyMDQgQzEwLjcwNzY3NjcsMC4wMDY1MDM2NDIwNCA5LjEwMjM1NDMyLDEuNjQ0OTczMDEgOS4xMDIzNTQzMiwzLjY2NjQ0MDA3IEw5LjEwMjM1NDMyLDMuNjY5MDk0NjkgTDEwLjg5NTE0ODMsMy42NjkwOTQ2OSBDMTAuODk1MTQ4MywyLjY1NzY5ODEgMTEuNjkwOTA2NCwxLjgzNzc5OTE3IDEyLjY4Nzk0MjIsMS44Mzc3OTkxNyBDMTMuNjc4MDc1LDEuODM3Nzk5MTcgMTQuNDgwNzM2MiwyLjY1MDY0NjgzIDE0LjQ4MDczNjIsMy42NjkwOTQ2OSBDMTQuNDgwNzM2Miw0LjY4MDQ5MTI4IDEzLjY3NjYxNDIsNS41MDAzOTAyMiAxMi42ODI2OTA1LDUuNTAwMzkwMjIgTDEuOTMxMTc4NDYsNS41MDAzOTAyMiBMMS45MzExNzg0Niw3LjMzMTY4NTc0IEwxMi42OTEzNDYxLDcuMzMxNjg1NzQgQzE0LjY2OTczMTcsNy4zMzE2ODU3NCAxNi4yNzM1MzAyLDUuNjg3NzcxODYgMTYuMjczNTMwMiwzLjY2OTA5NDY5IEwxNi4yNzM1MzAyLDMuNjY5MDk0NjkgTDE2LjI3MzUzMDIsMy42NjkwOTQ2OSBaIE0xOC43MzIyMTksMTYuMzMwOTA1MyBDMTguNzMyMjE5LDE4LjM1MzY5ODUgMTcuMTIyODY3MiwxOS45OTM0OTY0IDE1LjE0NjYzMTEsMTkuOTkzNDk2NCBDMTMuMTY2MzY1NiwxOS45OTM0OTY0IDExLjU2MTA0MzIsMTguMzU1MDI3IDExLjU2MTA0MzIsMTYuMzMzNTU5OSBMMTEuNTYxMDQzMiwxNi4zMzA5MDUzIEwxMy4zNTM4MzcxLDE2LjMzMDkwNTMgQzEzLjM1MzgzNzEsMTcuMzQyMzAxOSAxNC4xNDk1OTUzLDE4LjE2MjIwMDggMTUuMTQ2NjMxMSwxOC4xNjIyMDA4IEMxNi4xMzY3NjM5LDE4LjE2MjIwMDggMTYuOTM5NDI1MSwxNy4zNDkzNTMyIDE2LjkzOTQyNTEsMTYuMzMwOTA1MyBDMTYuOTM5NDI1MSwxNS4zMTk1MDg3IDE2LjEzNTMwMzEsMTQuNDk5NjA5OCAxNS4xNDEzNzk0LDE0LjQ5OTYwOTggTDQuMzg5ODY3MzMsMTQuNDk5NjA5OCBMNC4zODk4NjczMywxMi42NjgzMTQzIEwxNS4xNTAwMzUsMTIuNjY4MzE0MyBDMTcuMTI4NDIwNiwxMi42NjgzMTQzIDE4LjczMjIxOSwxNC4zMTIyMjgxIDE4LjczMjIxOSwxNi4zMzA5MDUzIEwxOC43MzIyMTksMTYuMzMwOTA1MyBMMTguNzMyMjE5LDE2LjMzMDkwNTMgWiIgaWQ9IndpbmQtMiI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=
+        )
+
+    [101] => Array
+        (
+            [0] => Mail Remix
+            [1] => manage_options
+            [2] => mail-remix
+            [3] => Mail Remix
+            [4] => menu-top toplevel_page_mail-remix
+            [5] => toplevel_page_mail-remix
+            [6] => data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9Ijk1cHgiIGhlaWdodD0iNjhweCIgdmlld0JveD0iMCAwIDk1IDY4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPk08L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iaWNvbiIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNS4wMDAwMDAsIC0yMy4wMDAwMDApIiBmb250LXdlaWdodD0ibm9ybWFsIiBmb250LWZhbWlseT0iQnJ1c2ggU2NyaXB0IE1UIiBmaWxsPSIjRUNFQ0VDIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iOTcuODM0Mzk0OSI+CiAgICAgICAgICAgIDxnIGlkPSJQYWdlLTEiIHNrZXRjaDp0eXBlPSJNU1RleHRMYXllciI+CiAgICAgICAgICAgICAgICA8dGV4dCBpZD0iTSI+CiAgICAgICAgICAgICAgICAgICAgPHRzcGFuIHg9IjAiIHk9Ijg3IiBmaWxsPSIjRThFOEU4Ij5NPC90c3Bhbj4KICAgICAgICAgICAgICAgIDwvdGV4dD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+
+        )
+
+)
+Array
+(
+    [index.php] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Home
+                    [1] => read
+                    [2] => index.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Updates <span class='update-plugins count-0' title=''><span class='update-count'>0</span></span>
+                    [1] => update_core
+                    [2] => update-core.php
+                )
+
+        )
+
+    [edit.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => All Posts
+                    [1] => edit_posts
+                    [2] => edit.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Add New
+                    [1] => edit_posts
+                    [2] => post-new.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Categories
+                    [1] => manage_categories
+                    [2] => edit-tags.php?taxonomy=category
+                )
+
+            [16] => Array
+                (
+                    [0] => Tags
+                    [1] => manage_categories
+                    [2] => edit-tags.php?taxonomy=post_tag
+                )
+
+        )
+
+    [upload.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => Library
+                    [1] => upload_files
+                    [2] => upload.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Add New
+                    [1] => upload_files
+                    [2] => media-new.php
+                )
+
+        )
+
+    [edit.php?post_type=page] => Array
+        (
+            [5] => Array
+                (
+                    [0] => All Pages
+                    [1] => edit_pages
+                    [2] => edit.php?post_type=page
+                )
+
+            [10] => Array
+                (
+                    [0] => Add New
+                    [1] => edit_pages
+                    [2] => post-new.php?post_type=page
+                )
+
+        )
+
+    [edit-comments.php] => Array
+        (
+            [0] => Array
+                (
+                    [0] => All Comments
+                    [1] => edit_posts
+                    [2] => edit-comments.php
+                )
+
+        )
+
+    [themes.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => Themes
+                    [1] => switch_themes
+                    [2] => themes.php
+                )
+
+            [6] => Array
+                (
+                    [0] => Customize
+                    [1] => customize
+                    [2] => customize.php?return=%2Fwp-admin%2Ftools.php%3Fpage%3Drocketbar
+                    [3] => 
+                    [4] => hide-if-no-customize
+                )
+
+            [7] => Array
+                (
+                    [0] => Widgets
+                    [1] => edit_theme_options
+                    [2] => widgets.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Menus
+                    [1] => edit_theme_options
+                    [2] => nav-menus.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Header
+                    [1] => switch_themes
+                    [2] => customize.php?return=%2Fwp-admin%2Ftools.php%3Fpage%3Drocketbar&#038;autofocus%5Bcontrol%5D=header_image
+                    [3] => 
+                    [4] => hide-if-no-customize
+                )
+
+            [16] => Array
+                (
+                    [0] => Header
+                    [1] => edit_theme_options
+                    [2] => custom-header
+                    [3] => Header
+                )
+
+            [17] => Array
+                (
+                    [0] => Editor
+                    [1] => edit_themes
+                    [2] => theme-editor.php
+                    [3] => Editor
+                )
+
+        )
+
+    [plugins.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => Installed Plugins
+                    [1] => activate_plugins
+                    [2] => plugins.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Add New
+                    [1] => install_plugins
+                    [2] => plugin-install.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Editor
+                    [1] => edit_plugins
+                    [2] => plugin-editor.php
+                )
+
+        )
+
+    [users.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => All Users
+                    [1] => list_users
+                    [2] => users.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Add New
+                    [1] => create_users
+                    [2] => user-new.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Your Profile
+                    [1] => read
+                    [2] => profile.php
+                )
+
+        )
+
+    [tools.php] => Array
+        (
+            [5] => Array
+                (
+                    [0] => Available Tools
+                    [1] => edit_posts
+                    [2] => tools.php
+                )
+
+            [10] => Array
+                (
+                    [0] => Import
+                    [1] => import
+                    [2] => import.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Export
+                    [1] => export
+                    [2] => export.php
+                )
+
+            [16] => Array
+                (
+                    [0] => RocketBar
+                    [1] => manage_options
+                    [2] => rocketbar
+                    [3] => RocketBar Preferences
+                )
+
+        )
+
+    [options-general.php] => Array
+        (
+            [10] => Array
+                (
+                    [0] => General
+                    [1] => manage_options
+                    [2] => options-general.php
+                )
+
+            [15] => Array
+                (
+                    [0] => Writing
+                    [1] => manage_options
+                    [2] => options-writing.php
+                )
+
+            [20] => Array
+                (
+                    [0] => Reading
+                    [1] => manage_options
+                    [2] => options-reading.php
+                )
+
+            [25] => Array
+                (
+                    [0] => Discussion
+                    [1] => manage_options
+                    [2] => options-discussion.php
+                )
+
+            [30] => Array
+                (
+                    [0] => Media
+                    [1] => manage_options
+                    [2] => options-media.php
+                )
+
+            [40] => Array
+                (
+                    [0] => Permalinks
+                    [1] => manage_options
+                    [2] => options-permalink.php
+                )
+
+        )
+
+    [edit-tags.php?taxonomy=link_category] => Array
+        (
+            [15] => Array
+                (
+                    [0] => Link Categories
+                    [1] => manage_categories
+                    [2] => edit-tags.php?taxonomy=link_category
+                )
+
+        )
+
+    [jinx-uf-setup] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Basic Setup
+                    [1] => manage_options
+                    [2] => jinx-uf-setup
+                    [3] => Basic Setup | Jinx User Framework
+                )
+
+        )
+
+    [shippu-setup] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Basic Setup
+                    [1] => manage_options
+                    [2] => shippu-setup
+                    [3] => Basic Setup | Shippu
+                )
+
+            [1] => Array
+                (
+                    [0] => Notifications
+                    [1] => manage_options
+                    [2] => shippu-notify
+                    [3] => Notifications | Shippu
+                )
+
+            [2] => Array
+                (
+                    [0] => <span class="shippu-submenu-separator"></span>
+                    [1] => manage_options
+                    [2] => #
+                    [3] => 
+                )
+
+            [3] => Array
+                (
+                    [0] => Products
+                    [1] => manage_options
+                    [2] => shippu-products
+                    [3] => My Products | Shippu
+                )
+
+            [4] => Array
+                (
+                    [0] => Orders
+                    [1] => manage_options
+                    [2] => shippu-orders
+                    [3] => Orders | Shippu
+                )
+
+            [5] => Array
+                (
+                    [0] => <span class="shippu-submenu-separator"></span>
+                    [1] => manage_options
+                    [2] => #
+                    [3] => 
+                )
+
+            [6] => Array
+                (
+                    [0] => Debug (Logging)
+                    [1] => manage_options
+                    [2] => shippu-logging
+                    [3] => Debug (Logging) | Shippu
+                )
+
+            [7] => Array
+                (
+                    [0] => Documentation
+                    [1] => manage_options
+                    [2] => shippu-docs
+                    [3] => The Docs | Shippu
+                )
+
+        )
+
+    [mail-remix] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Basic Config
+                    [1] => manage_options
+                    [2] => mail-remix
+                    [3] => Mail Remix | Basic Config
+                )
+
+            [1] => Array
+                (
+                    [0] => Transport
+                    [1] => manage_options
+                    [2] => remix-transport
+                    [3] => Mail Remix | Transport
+                )
+
+            [2] => Array
+                (
+                    [0] => Templating
+                    [1] => manage_options
+                    [2] => remix-templates
+                    [3] => Mail Remix | Templating
+                )
+
+            [3] => Array
+                (
+                    [0] => Logging
+                    [1] => manage_options
+                    [2] => remix-logging
+                    [3] => Mail Remix | Logging
+                )
+
+        )
+
+)
