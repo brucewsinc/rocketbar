@@ -1,3 +1,5 @@
 (function() {
-	console.log('RocketBar Running...');
+	var cache = document.rocketBarCache;
+
+	console.log(cache);
 })();
