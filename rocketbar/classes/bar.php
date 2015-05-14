@@ -3,6 +3,9 @@
 namespace rocketbar;
 
 class bar {
+	/**
+	 * Initializes Client-side code for the RocketBar
+	 */
 	public static function initialize() {
 		if(!current_user_can('manage_options')) return;
 
@@ -15,6 +18,9 @@ class bar {
 		wp_enqueue_style('rocketbar', plugin()->url . '/client-s/css/rocketbar.min.css');
 	}
 
+	/**
+	 * Retrieves and caches all information that's used by the RocketBar
+	 */
 	public static function gather() {
 		$page_ids = get_all_page_ids();
 		$pages    = array();
@@ -42,6 +48,9 @@ class bar {
 		update_site_option('rocketbar_cache', json_encode($cache));
 	}
 
+	/**
+	 * Builds JavaScript to give client-side code access to the cached information used to build the bar
+	 */
 	public static function build_js_file() {
 		if(!isset($_GET['_rocketbar_cache']) || !current_user_can('manage_options')) return;
 

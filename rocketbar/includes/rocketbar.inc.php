@@ -2,7 +2,16 @@
 
 namespace rocketbar;
 
+/**
+ * Class plugin
+ *
+ * @package rocketbar
+ */
 class plugin {
+
+	/**
+	 * Class constructor
+	 */
 	public function __construct() {
 		$this->file = dirname(dirname(__FILE__)) . '/rocketbar.php';
 		$this->url  = plugins_url(NULL, $this->file);

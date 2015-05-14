@@ -2,11 +2,22 @@
 
 namespace rocketbar;
 
+/**
+ * Class admin
+ *
+ * @package rocketbar
+ */
 class admin {
+	/**
+	 * Adds the RocketBar page to the Tools menu
+	 */
 	public static function initialize() {
 		add_management_page('RocketBar Preferences', 'RocketBar', 'manage_options', 'rocketbar', 'rocketbar\admin_page::page');
 	}
 
+	/**
+	 * Saves the admin menus into the database
+	 */
 	public static function get_all_pages() {
 		global $menu, $submenu;
 
