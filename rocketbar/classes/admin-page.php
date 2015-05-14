@@ -11,6 +11,6 @@ class admin_page {
 		<div class="wrap">
 			<h2>RocketBar | Preferences</h2>
 		</div>
-		<?php
+	<?php
 	}
 }

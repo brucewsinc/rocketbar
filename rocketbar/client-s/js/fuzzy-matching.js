@@ -15,7 +15,7 @@
 
 				priority++;
 				if(i === 0 || chars[i - 1] === ' ') priority++;
-				else if(i === matches[i - 1] + 1) priority += 2;
+				else if(chars[i - 1] === search[pos - 1]) priority += 2;
 			}
 
 			if(pos === search.length) return {priority: priority, matches: matches, text: text}; // We found all of the characters
@@ -42,6 +42,6 @@
 	};
 
 	Array.prototype.fuzzyMatches = function(s) {
-		search(this, s);
+		return search(this, s);
 	};
 })();
