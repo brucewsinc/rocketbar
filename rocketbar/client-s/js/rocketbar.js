@@ -35,6 +35,10 @@
 			var menu = cache.menu[priority];
 			menu.searchableIndex = searchable.length;
 
+			var menu_slug = menu[2];
+			if(menu_slug.match(/\.php/)) menu.link = cache.admin_url + menu_slug;
+			else menu.link = cache.admin_url + 'admin.php?page=' + menu_slug;
+
 			if(menu[0].length) {
 				var name = menu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 
@@ -55,6 +59,10 @@
 			for(id in submenus) {
 				if(submenus.hasOwnProperty(id)) {
 					var submenu = submenus[id];
+
+					menu_slug = submenu[2];
+					if(menu_slug.match(/\.php/)) submenu.link = cache.admin_url + menu_slug;
+					else submenu.link = cache.admin_url + 'admin.php?page=' + menu_slug;
 
 					name = submenu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 

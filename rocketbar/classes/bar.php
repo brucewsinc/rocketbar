@@ -34,10 +34,11 @@ class bar {
 				'link'  => get_term_link($id)
 			);
 
-		$menu    = get_site_option('rocketbar_menu_cache', array());
-		$submenu = get_site_option('rocketbar_submenu_cache', array());
+		$menu      = get_site_option('rocketbar_menu_cache', array());
+		$submenu   = get_site_option('rocketbar_submenu_cache', array());
+		$admin_url = admin_url();
 
-		$cache = compact('menu', 'submenu', 'taxonomies', 'pages');
+		$cache = compact('menu', 'submenu', 'taxonomies', 'pages', 'admin_url');
 		update_site_option('rocketbar_cache', json_encode($cache));
 	}
 

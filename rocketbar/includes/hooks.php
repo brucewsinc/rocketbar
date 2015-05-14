@@ -15,7 +15,7 @@ if(!wp_next_scheduled('rocketbar_gather_data'))
 	wp_schedule_event(time(), 'hourly', 'rocketbar\bar::gather');
 
 if(!get_site_option('rocketbar_cache', FALSE))
-	add_action('wp', 'rocketbar\bar::gather');
+	add_action('admin_init', 'rocketbar\bar::gather');
 
 // Builds dynamic JavaScript file
 add_action('plugins_loaded', 'rocketbar\bar::build_js_file');
