@@ -12,7 +12,7 @@ class admin {
 	 * Adds the RocketBar page to the Tools menu
 	 */
 	public static function initialize() {
-		add_management_page('RocketBar Preferences', 'RocketBar', 'manage_options', 'rocketbar', 'rocketbar\admin_page::page');
+		add_management_page('RocketBar', 'RocketBar', 'manage_options', 'rocketbar', 'rocketbar\admin_page::page');
 	}
 
 	/**

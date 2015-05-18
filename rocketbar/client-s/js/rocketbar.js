@@ -123,9 +123,9 @@
 				matches[i] = findByIndex(index, cache);
 				matches[i].txt = '';
 
-				o.text.split('').forEach(function(char, pos) {
-					if(o.matches.indexOf(pos) !== -1) matches[i].txt += '<strong>' + char + '</strong>';
-					else matches[i].txt += char;
+				o.text.split('').forEach(function(ch, p) {
+					if(o.matches.indexOf(p) !== -1) matches[i].txt += '<strong>' + ch + '</strong>';
+					else matches[i].txt += ch;
 				});
 			});
 
@@ -183,8 +183,6 @@
 
 		/* Bar initialized */
 
-		input.focus();
-
 		input.on('change keyup keydown paste', function redraw() {
 			var matches = findMatches($(this).val());
 			list.html('');
@@ -196,6 +194,20 @@
 			});
 
 			setSelected();
+		});
+
+		/* Keybind */
+
+		$(document).on('keydown', function(e) {
+			// e.shiftKey
+			// e.altKey
+			// e.ctrlKey
+			// e.keyCode
+
+			if(e.shiftKey && e.keyCode === 32) $(bar).toggle();
+			input.focus();
+
+			if(e.keyCode === 27) $(bar).toggle();
 		});
 
 		/* Utility functions */
