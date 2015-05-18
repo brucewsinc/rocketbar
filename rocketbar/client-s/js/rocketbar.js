@@ -76,7 +76,7 @@
 						if(name.length) {
 							submenu.searchableIndex = searchable.length;
 							submenu.iconHTML = menuIconsBySlug[slug];
-							searchable.push(menuName + ' &rarr; ' + name);
+							searchable.push(menuName + ' → ' + name);
 						}
 					}
 				}
@@ -132,9 +132,27 @@
 		var bar = document.createElement('div');
 		$(bar).addClass('rocketbar-wrapper');
 
-		$(bar).append('<input type="text" id="rocketbar" placeholder="Type to navigate..." />');
+		$(bar).append('<input type="text" id="rocketbar" placeholder="Type to navigate..." /><ul id="rocketbar-list"></ul>');
 
 		$('body').append(bar);
+
+		/* Bar initialized */
+
+		var input = $('#rocketbar'),
+			list = $('#rocketbar-list');
+
+		input.focus();
+
+		input.on('change keyup keydown paste', function() {
+			var matches = findMatches($(this).val());
+			list.html('');
+
+			matches = matches.slice(0, 10);
+
+			matches.forEach(function(o) {
+				list.append('<li><a href="' + o.link + '">' + o.txt + '</a></li>')
+			});
+		});
 	};
 
 	$(document).ready(bar);
