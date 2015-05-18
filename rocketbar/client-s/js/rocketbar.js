@@ -47,7 +47,7 @@
 				else if(menu[6] && menu[6].match(new RegExp('data:image\/svg', 'i')))
 					menu.iconHTML = '<div class="wp-menu-image svg" style="background-image: url(\'' + menu[6] + '\') !important; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
 				else if(menu[6] && menu[6].match(new RegExp('http', 'i')))
-					menu.iconHTML = '<img src="' + menu[6] + '" style="width: 20px; height: 20px;" />';
+					menu.iconHTML = '<img src="' + menu[6] + '" style="width: 18px; height: 18px; vertical-align: top;" />';
 				else menu.iconHTML = '';
 
 				var menu_slug = menu[2];
