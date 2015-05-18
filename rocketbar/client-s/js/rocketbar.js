@@ -42,6 +42,16 @@
 				var menu = cache.menu[priority];
 				menu.searchableIndex = searchable.length;
 
+				console.log(menu[6]);
+
+				if(menu[6] && !menu[6].match(/^data:image|^http/i)) // Dashicon class
+					menu.iconHTML = '<div class="wp-menu-image dashicons-before ' + menu[6] + '"></div>';
+				else if(menu[6] && menu[6].match(new RegExp('data:image\/svg', 'i')))
+					menu.iconHTML = '<div class="wp-menu-image svg" style="background-image: url(\'' + menu[6] + '\') !important; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
+				else if(menu[6] && menu[6].match(new RegExp('http', 'i')))
+					menu.iconHTML = '<img src="' + menu[6] + '" style="width: 20px; height: 20px;" />';
+				else menu.iconHTML = '';
+
 				var menu_slug = menu[2];
 				if(menu_slug.match(/\.php/)) menu.link = cache.admin_url + menu_slug;
 				else menu.link = cache.admin_url + 'admin.php?page=' + menu_slug;
@@ -53,7 +63,7 @@
 					menuNamesBySlug[menu[2]] = name;
 
 					// Generate icon HTML
-					menuIconsBySlug[menu[2]] = '';
+					menuIconsBySlug[menu[2]] = menu.iconHTML;
 				}
 			}
 		}
@@ -150,7 +160,7 @@
 			matches = matches.slice(0, 10);
 
 			matches.forEach(function(o) {
-				list.append('<li><a href="' + o.link + '">' + o.txt + '</a></li>')
+				list.append('<li>' + o.iconHTML + '<a href="' + o.link + '">' + o.txt + '</a></li>')
 			});
 		});
 	};
