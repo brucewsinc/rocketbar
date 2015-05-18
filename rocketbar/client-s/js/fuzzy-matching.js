@@ -15,7 +15,7 @@
 
 				priority++;
 				if(i === 0 || chars[i - 1] === ' ') priority++;
-				else if(chars[i - 1] === search[pos - 1]) priority += 2;
+				else if(chars[i - 1] === search[pos - 1]) priority += 3;
 			}
 
 			if(pos === search.length) return {priority: priority, matches: matches, text: text}; // We found all of the characters
