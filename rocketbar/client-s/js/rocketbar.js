@@ -42,8 +42,6 @@
 				var menu = cache.menu[priority];
 				menu.searchableIndex = searchable.length;
 
-				console.log(menu[6]);
-
 				if(menu[6] && !menu[6].match(/^data:image|^http/i)) // Dashicon class
 					menu.iconHTML = '<div class="wp-menu-image dashicons-before ' + menu[6] + '"></div>';
 				else if(menu[6] && menu[6].match(new RegExp('data:image\/svg', 'i')))
@@ -59,7 +57,7 @@
 				if(menu[0].length) {
 					var name = menu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 
-					searchable.push(name); // Some menus have HTML in them, and a trailing number
+					//searchable.push(name); // Some menus have HTML in them, and a trailing number
 					menuNamesBySlug[menu[2]] = name;
 
 					// Generate icon HTML
@@ -146,14 +144,48 @@
 
 		$('body').append(bar);
 
-		/* Bar initialized */
+		/* Objects */
 
 		var input = $('#rocketbar'),
 			list = $('#rocketbar-list');
 
+		/* Current selected */
+
+		var selected = 0; // Defaults to 0
+
+		$(document).on('keyup', function(e) {
+			if(!barIsVisible()) return selected = 0;
+
+			e.preventDefault();
+
+			if(e.keyCode === 38) selected--;
+			else if(e.keyCode === 40) selected++;
+
+			if(selected < 0) selected = 0;
+
+			setSelected();
+		});
+
+		input.on('keyup', function(e) {
+			if(e.keyCode !== 13) return;
+
+			e.preventDefault();
+
+			var elements = $('#rocketbar-list > li > a');
+
+			elements.each(function(i, o) {
+				if(i === selected) {
+					$(o).click();
+					document.location = $(o).attr('href');
+				}
+			});
+		});
+
+		/* Bar initialized */
+
 		input.focus();
 
-		input.on('change keyup keydown paste', function() {
+		input.on('change keyup keydown paste', function redraw() {
 			var matches = findMatches($(this).val());
 			list.html('');
 
@@ -162,7 +194,23 @@
 			matches.forEach(function(o) {
 				list.append('<li>' + o.iconHTML + '<a href="' + o.link + '">' + o.txt + '</a></li>')
 			});
+
+			setSelected();
 		});
+
+		/* Utility functions */
+
+		var setSelected = function() {
+			list.find('li').each(function(i, o) {
+				if(i === selected)
+					$(o).addClass('selected');
+				else $(o).removeClass('selected');
+			});
+		};
+
+		var barIsVisible = function() {
+			return $(bar).is(':visible');
+		};
 	};
 
 	$(document).ready(bar);

@@ -1,5 +1,7 @@
 .rocketbar-wrapper
 {
+	display          : none;
+
 	position         : fixed;
 	top              : 50px;
 
@@ -84,4 +86,16 @@
 #rocketbar-list .dashicons-before:before
 {
 	vertical-align : top;
+}
+#rocketbar-list .selected
+{
+	color            : #FFFFFF;
+	background-color : rgba(255, 255, 255, 0.3)
+}
+#rocketbar-list .selected::after
+{
+	content    : '↵';
+	float      : right;
+	margin-top : 3px;
+	font-size  : 16px;
 }
