@@ -122,6 +122,7 @@
 
 				matches[i] = findByIndex(index, cache);
 				matches[i].txt = '';
+				matches[i].priority = o.priority;
 
 				o.text.split('').forEach(function(ch, p) {
 					if(o.matches.indexOf(p) !== -1) matches[i].txt += '<strong>' + ch + '</strong>';
@@ -140,7 +141,7 @@
 		var bar = document.createElement('div');
 		$(bar).addClass('rocketbar-wrapper');
 
-		$(bar).append('<input type="text" id="rocketbar" placeholder="Type to navigate..." /><ul id="rocketbar-list"></ul>');
+		$(bar).append('<input type="text" id="rocketbar" placeholder="Type to navigate..." autofocus="yes" value="" /><ul id="rocketbar-list"></ul>');
 
 		$('body').append(bar);
 
@@ -183,7 +184,7 @@
 
 		/* Bar initialized */
 
-		input.on('change keyup keydown paste', function redraw() {
+		input.on('change keyup keydown paste', function() {
 			var matches = findMatches($(this).val());
 			list.html('');
 
@@ -205,9 +206,12 @@
 			// e.keyCode
 
 			if(e.shiftKey && e.keyCode === 32) $(bar).toggle();
-			input.focus();
+			if(e.keyCode === 27 && barIsVisible()) $(bar).hide();
 
-			if(e.keyCode === 27) $(bar).toggle();
+			if(!barIsVisible()) input.val('');
+			if(input.val() === ' ') input.val('');
+
+			input.focus();
 		});
 
 		/* Utility functions */

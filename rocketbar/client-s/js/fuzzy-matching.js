@@ -1,7 +1,7 @@
 (function() {
-	var match = function(text, search) {
+	var match = function(text, srch) {
 		// Remove spaces + make lowercase => Array
-		search = search.replace(/\s/g, '').toLowerCase().split('');
+		var search = srch.replace(/\s/g, '').toLowerCase().split('');
 
 		var chars = text.toString().toLowerCase().split(''), // Split down to characters
 			pos = 0, // Position in search we're at
@@ -18,7 +18,10 @@
 				else if(chars[i - 1] === search[pos - 1]) priority += 3;
 			}
 
-			if(pos === search.length) return {priority: priority, matches: matches, text: text}; // We found all of the characters
+			if(pos === search.length) {
+				if(text.toLowerCase().indexOf(srch.replace(/\s/g, '').toLowerCase()) > -1) priority += 15;
+				return {priority: priority, matches: matches, text: text};
+			} // We found all of the characters
 		}
 
 		return false; // We didn't find all of the characters
