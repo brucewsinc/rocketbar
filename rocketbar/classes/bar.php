@@ -10,7 +10,7 @@ class bar {
 		if(!current_user_can('manage_options')) return;
 
 		wp_enqueue_script('fuzzy-matching', plugin()->url . '/client-s/js/fuzzy-matching.min.js', TRUE);
-		wp_enqueue_script('rocketbar-cache', site_url('/wp-load.php?_rocketbar_cache=1'), TRUE);
+		wp_enqueue_script('rocketbar-cache', site_url('/?_rocketbar_cache=1'), TRUE);
 		wp_enqueue_script('rocketbar', plugin()->url . '/client-s/js/rocketbar.min.js', array('jquery'), TRUE);
 
 		wp_enqueue_style('dashicons');
