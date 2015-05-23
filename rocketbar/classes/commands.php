@@ -55,6 +55,8 @@ class commands {
 	}
 
 	public static function generate_js() {
+		if(!current_user_can('manage_options')) return;
+
 		$print_js = function () {
 			$obj = json_encode($GLOBALS['rocketbar_commands']);
 			echo '<script>(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\'); document.rocketbarIcon=\'' . plugin()->url . '/client-s/rocket.svg' . '\'; })();</script>';
