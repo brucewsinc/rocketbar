@@ -1,7 +1,7 @@
 === The RocketBar ===
 Contributors: code-by-jinx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YS46UW6PLH286
-Tags: quick switch, rocketbar, spotlight, search, quick, fast
+Tags: quick switch, rocketbar, spotlight, search, quick, fast, dashboard, commands
 Requires at least: 3.2
 Tested up to: 4.2.2
 Stable tag: 150523
@@ -45,7 +45,7 @@ There's no turning back now. You're one of us.
 
 To track the development of RocketBar, find us on [GitHub](https://github.com/byjinx/rocketbar)!
 
-** The following items are being looked at for additions to a future version of RocketBar:**
+**The following items are being looked at for additions to a future version of RocketBar:**
 
  - Login / Logout Commands
  - Navigation via input of URI (i.e. type in `/a/place/on/my/site` and navigate there directly from RocketBar)
