@@ -4,7 +4,7 @@
  * Author: Code by Jinx
  * Author URI: http://byjinx.com/
  * Description: The quicker page switcher!? Keyboard shortcuts for your WordPress Dashboard.
- * Version: 150523
+ * Version: 150524
  */
 
 /**

@@ -19,3 +19,9 @@ if(!get_site_option('rocketbar_cache', FALSE))
 
 // Builds dynamic JavaScript file
 add_action('plugins_loaded', 'rocketbar\bar::build_js_file');
+
+// Dynamic Commands
+add_action('plugins_loaded', function () {
+	new rocketbar\commands_rest;
+});
+add_action('wp', 'rocketbar\commands::initialize');

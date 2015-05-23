@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: switch, rocketbar, spotlight, search, quick, fast, dashboard, commands, admin, widget
 Requires at least: 3.2
 Tested up to: 4.2.2
-Stable tag: 150523
+Stable tag: 150524
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,8 +14,14 @@ The quicker page switcher!? Keyboard shortcuts for your WordPress Dashboard.
 
 The RocketBar is a new, faster (FREE) way to get around in WordPres. Instead of clicking from page to page, just hit a keyboard shortcut and immediately go where you're headed!
 
-The plugin is designed after the OSX Spotlight Search feature, and uses a keybinding of `SHIFT + SPACE` to open. Once open, just type in your destination
-and hit `ENTER`.
+The plugin is designed after the OSX Spotlight Search feature, and uses a keybinding of `SHIFT + SPACE` to open.
+
+**But wait, there's more!**
+
+RocketBar also supports several commands and shortcuts that do various actions based on where on your site you're at. For example,
+on a WordPress Post or Page? Open RocketBar and type in <code>edit</code>. Hit ENTER and you're now editing the Post or Page you were on.
+
+Check out all of RocketBar's commands! Install now!
 
 == Installation ==
 
@@ -82,4 +88,4 @@ First release of RocketBar
 Initial WordPress.org release of RocketBar
 
 = 150524 =
-Commands! Commands everywhere!
+Commands update! Upgrade ASAP!

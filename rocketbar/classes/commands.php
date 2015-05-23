@@ -9,6 +9,7 @@ class commands {
 
 		// Recommended for use of `rocketbar\commands::add_new`
 		do_action('rocketbar_commands_init');
+		self::generate_js();
 	}
 
 	/**
@@ -18,6 +19,7 @@ class commands {
 	 *
 	 * @param $command string The command name. Such as 'edit', 'parse', 'regex', etc.
 	 * @param $url string This is the URL that the command leads to. If $params is specified, there will be GET variables appended to this URL
+	 * @param $description string A description for the command to be shown to the User
 	 * @param $param string This is the parameter name you'd like sent to your URL. No special characters.
 	 *
 	 * NOTE: Only one parameter will be parsed from this function. If you would like to make multiple available, you can parse the values
@@ -40,19 +42,37 @@ class commands {
 	 * rocketbar\commands::add_new('g2e', 'http://example.com/', '[uri]');
 	 * ```
 	 */
-	public static function add_new($command, $url, $param = '') {
+	public static function add_new($command, $url, $description, $param = '') {
 		// Commands should only have alphanumeric values, and be lowercase
 		$command  = preg_replace('/[^a-zA-Z0-9]+/', '', trim(strtolower($command)));
 		$url      = strpos(trim($url), '/') === 0 ? site_url($url) : trim($url);
 		$optional = strpos(trim($param), '<') === 0 ? FALSE : TRUE;
 		$param    = trim(trim($param), '<>[]');
+		$start    = strpos($url, '?') === FALSE ? '?' : '&';
 
-		$GLOBALS['rocketbar_commands'][$command] = compact('command', 'url', 'optional', 'param');
+		$GLOBALS['rocketbar_commands'][$command] = compact('command', 'url', 'optional', 'param', 'start', 'description');
 	}
 
-	public static function default_commands() {
+	public static function generate_js() {
+		$print_js = function () {
+			$obj = json_encode($GLOBALS['rocketbar_commands']);
+			echo '<script>(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\') })();</script>';
+		};
+
+		add_action('wp_footer', $print_js);
+		add_action('admin_footer', $print_js);
 	}
 
-	public static function print_js() {
+	/**
+	 * Default RocketBar commands
+	 */
+	protected static function default_commands() {
+		// Login / Logout Commands
+		self::add_new('logout', wp_logout_url(), 'Logout of your WordPress site');
+		self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
+
+		// Edit Post/Page Command
+		if(is_single()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID()), 'Edit this Post/Page (or specified)', '[id]');
+		else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
 	}
 }
