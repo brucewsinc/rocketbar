@@ -6,6 +6,7 @@ class commands {
 	public static function initialize() {
 		// Global array of commands used by the plugin
 		$GLOBALS['rocketbar_commands'] = array();
+		self::default_commands();
 
 		// Recommended for use of `rocketbar\commands::add_new`
 		do_action('rocketbar_commands_init');
@@ -56,7 +57,7 @@ class commands {
 	public static function generate_js() {
 		$print_js = function () {
 			$obj = json_encode($GLOBALS['rocketbar_commands']);
-			echo '<script>(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\') })();</script>';
+			echo '<script>(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\'); document.rocketbarIcon=\'' . plugin()->url . '/client-s/rocket.svg' . '\'; })();</script>';
 		};
 
 		add_action('wp_footer', $print_js);

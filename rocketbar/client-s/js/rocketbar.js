@@ -5,13 +5,28 @@
 	/**
 	 * Data retrieval
 	 */
-	(function data() {
+	var data = function() {
 		var cache = document.rocketBarCache;
 
 		/* We need to compile a list of searchable titles first */
 		var searchable = [];
 
-		// Compiling Page
+		cache.commands = document.rocketbarCommands;
+		console.log(cache.commands);
+
+		for(var cmd in cache.commands) {
+			if(cache.commands.hasOwnProperty(cmd)) {
+				var cmdObj = cache.commands[cmd];
+
+				cmdObj.searchableIndex = searchable.length;
+				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
+				cmdObj.link = cmdObj.url;
+
+				searchable.push(cmdObj.description);
+			}
+		}
+
+		// Compiling Pages
 		for(var id in cache.pages) {
 			if(cache.pages.hasOwnProperty(id)) {
 				var page = cache.pages[id];
@@ -132,7 +147,7 @@
 
 			return matches;
 		};
-	})();
+	};
 
 	/**
 	 * The Rocket Bar
@@ -229,5 +244,6 @@
 		};
 	};
 
+	$(document).ready(data);
 	$(document).ready(bar);
 })(jQuery);
