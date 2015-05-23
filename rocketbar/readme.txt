@@ -77,7 +77,7 @@ If you would like to suggest an addition or change, tell us in the Support forum
 * Fixed an issue with loading the client-side resources for the plugin, as pointed out by the WordPress.org team
 
 = 150524 =
-* Login/Logout commands, and a powerful API function for your use! See:
+* Login/Logout commands, and a powerful API function for your use!
 
 == Upgrade Notice ==
 
