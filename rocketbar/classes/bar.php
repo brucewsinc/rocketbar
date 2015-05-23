@@ -24,11 +24,14 @@ class bar {
 		$page_ids = get_all_page_ids();
 		$pages    = array();
 
-		foreach($page_ids as $id)
+		foreach($page_ids as $id) {
+			if(!'publish' === get_post_status($id)) continue;
+
 			$pages[$id] = array(
 				'title' => get_the_title($id),
 				'link'  => get_page_link($id)
 			);
+		}
 
 		$taxs       = get_terms('category', array('fields' => 'id=>name', 'hide_empty' => TRUE));
 		$taxonomies = array();

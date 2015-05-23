@@ -49,7 +49,7 @@ class commands_rest {
 
 		if(isset($_REQUEST['id'])) $id = $_REQUEST['id'];
 
-		$url = get_edit_post_link($id);
+		$url = get_edit_post_link($id, '');
 		header('Location: ' . $url);
 	}
 }

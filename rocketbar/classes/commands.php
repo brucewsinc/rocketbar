@@ -70,10 +70,11 @@ class commands {
 	protected static function default_commands() {
 		// Login / Logout Commands
 		self::add_new('logout', wp_logout_url(), 'Logout of your WordPress site');
-		self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
+		//self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
 
 		// Edit Post/Page Command
-		if(is_single()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID()), 'Edit this Post/Page (or specified)', '[id]');
-		else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
+		global $post;
+		if(is_single() || is_page()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID($post->ID)), 'Edit this Post/Page', '[id]');
+		//else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
 	}
 }
