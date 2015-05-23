@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: quick switch, rocketbar, spotlight, search, quick, fast
 Requires at least: 3.2
 Tested up to: 4.2.2
-Stable tag: 150518
+Stable tag: 150523
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,22 @@ No, only Administrators (or, more precisely, User with the `manage_options` Capa
 
 There's no turning back now. You're one of us.
 
+== What's Next? ==
+
+To track the development of RocketBar, find us on [GitHub](https://github.com/byjinx/rocketbar)!
+
+** The following items are being looked at for additions to a future version of RocketBar:**
+
+ - Login / Logout Commands
+ - Navigation via input of URI (i.e. type in `/a/place/on/my/site` and navigate there directly from RocketBar)
+ - A set of "default" commands / links, based on your usage of the RocketBar
+ - Command API for personal modifications
+ - Bar themeing
+
+---
+
+If you would like to suggest an addition or change, tell us in the Support forums!
+
 == Screenshots ==
 
 1. The RocketBar administration panel
@@ -51,7 +67,13 @@ There's no turning back now. You're one of us.
 = 150517 =
 * First release of RocketBar. Much more to come.
 
+= 150523 =
+* Fixed an issue with loading the client-side resources for the plugin, as pointed out by the WordPress.org team
+
 == Upgrade Notice ==
 
 = 150517 =
 First release of RocketBar
+
+= 150523 =
+Initial WordPress.org release of RocketBar
