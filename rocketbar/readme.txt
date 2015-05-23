@@ -1,7 +1,7 @@
 === The RocketBar ===
 Contributors: code-by-jinx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YS46UW6PLH286
-Tags: quick switch, rocketbar, spotlight, search, quick, fast, dashboard, commands
+Tags: switch, rocketbar, spotlight, search, quick, fast, dashboard, commands, admin, widget
 Requires at least: 3.2
 Tested up to: 4.2.2
 Stable tag: 150523
@@ -70,6 +70,9 @@ If you would like to suggest an addition or change, tell us in the Support forum
 = 150523 =
 * Fixed an issue with loading the client-side resources for the plugin, as pointed out by the WordPress.org team
 
+= 150524 =
+* Login/Logout commands, and a powerful API function for your use! See:
+
 == Upgrade Notice ==
 
 = 150517 =
@@ -77,3 +80,6 @@ First release of RocketBar
 
 = 150523 =
 Initial WordPress.org release of RocketBar
+
+= 150524 =
+Commands! Commands everywhere!

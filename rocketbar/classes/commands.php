@@ -4,7 +4,11 @@ namespace rocketbar;
 
 class commands {
 	public static function initialize() {
-		do_action('rocketbar_commands_init'); //
+		// Global array of commands used by the plugin
+		$GLOBALS['rocketbar_commands'] = array();
+
+		// Recommended for use of `rocketbar\commands::add_new`
+		do_action('rocketbar_commands_init');
 	}
 
 	/**
@@ -14,7 +18,7 @@ class commands {
 	 *
 	 * @param $command string The command name. Such as 'edit', 'parse', 'regex', etc.
 	 * @param $url string This is the URL that the command leads to. If $params is specified, there will be GET variables appended to this URL
-	 * @param $params string This is the parameter name you'd like sent to your URL. No special characters.
+	 * @param $param string This is the parameter name you'd like sent to your URL. No special characters.
 	 *
 	 * NOTE: Only one parameter will be parsed from this function. If you would like to make multiple available, you can parse the values
 	 *       that are send to your URL when the command is selected.
@@ -27,16 +31,26 @@ class commands {
 	 * For a command that opens a document that alerts a string, you might call this method like so:
 	 *
 	 * ```
-	 * rocketbar\commands::add_new('alert', '<string>');
+	 * rocketbar\commands::add_new('alert', site_url('/?_my_url'), '<string>');
 	 * ```
 	 *
 	 * For a command that will take you to `example.com`, you might allow a parameter to specify the URI like so:
 	 *
 	 * ```
-	 * rocketbar\commands::add_new('g2e', '[uri]');
+	 * rocketbar\commands::add_new('g2e', 'http://example.com/', '[uri]');
 	 * ```
 	 */
-	public static function add_new($command, $url, $params = '') {
+	public static function add_new($command, $url, $param = '') {
+		// Commands should only have alphanumeric values, and be lowercase
+		$command  = preg_replace('/[^a-zA-Z0-9]+/', '', trim(strtolower($command)));
+		$url      = strpos(trim($url), '/') === 0 ? site_url($url) : trim($url);
+		$optional = strpos(trim($param), '<') === 0 ? FALSE : TRUE;
+		$param    = trim(trim($param), '<>[]');
+
+		$GLOBALS['rocketbar_commands'][$command] = compact('command', 'url', 'optional', 'param');
+	}
+
+	public static function default_commands() {
 	}
 
 	public static function print_js() {
