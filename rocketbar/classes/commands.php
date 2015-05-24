@@ -76,7 +76,7 @@ class commands {
 	protected static function default_commands() {
 		// Login / Logout Commands
 		self::add_new('logout', wp_logout_url(), 'Logout of your WordPress site');
-		//self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
+		self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
 
 		// Edit Post/Page Command
 		global $post;

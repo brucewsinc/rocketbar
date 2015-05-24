@@ -39,6 +39,30 @@ class admin_page {
 			<p>
 				Just press the RocketBar key combination (<code>SHIFT + SPACE</code>), open and type to get started!
 			</p>
+
+			<hr />
+
+			<h3>Using Commands</h3>
+
+			<p>
+				At the current time, commands with RocketBar are limited. Here are the basic commands available:
+			</p>
+
+			<ul>
+				<li>
+					<code>edit</code> - On the frontend of your site, when you're on a Post/Page this command will allow you to edit the current
+					                  Post/Page that you're on. In other parts of you Dashboard, you'll need to enter a Post ID to use this command.
+				</li>
+
+				<li>
+					<code>logout</code> - Logs you out of your WordPress site.
+				</li>
+
+				<li>
+					<code>login</code> - Use this command, and a WordPress username to log into any User on your site.
+					                   You'll be brought to the selected User's profile.
+				</li>
+			</ul>
 		</div>
 	<?php
 	}

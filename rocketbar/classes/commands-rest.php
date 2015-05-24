@@ -4,7 +4,7 @@ namespace rocketbar;
 
 class commands_rest {
 	public function __construct() {
-		if(!current_user_can('manage_options')) return;
+		if(!current_user_can('manage_options')) return; // Commands are only available to administrators
 
 		$methods = get_class_methods('rocketbar\commands_rest');
 
