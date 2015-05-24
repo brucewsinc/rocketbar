@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: switch, rocketbar, spotlight, search, quick, fast, dashboard, commands, admin, widget
 Requires at least: 3.2
 Tested up to: 4.2.2
-Stable tag: 150524-2
+Stable tag: 150525
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -82,6 +82,9 @@ If you would like to suggest an addition or change, tell us in the Support forum
 = 150524-2 =
 * Command upgrade
 
+= 150525 =
+* Fixed bug where opening RocketBar put a space into the search field
+
 == Upgrade Notice ==
 
 = 150517 =
@@ -95,3 +98,6 @@ Commands update! Upgrade ASAP!
 
 = 150524-2 =
 Some hotfixes to commands + a bit of an upgrade!
+
+= 150525 =
+Bug fixes + Maintenance Release

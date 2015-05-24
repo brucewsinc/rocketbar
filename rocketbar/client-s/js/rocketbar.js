@@ -2,11 +2,13 @@
 
 	var findMatches, getCommand;
 
+	var baseUrl = document.rocketbarBaseURL;
+
 	/**
 	 * Data retrieval
 	 */
 	var data = function() {
-		var cache = document.rocketBarCache;
+		var cache = document.rocketbarCache;
 
 		/* We need to compile a list of searchable titles first */
 		var searchable = [],
@@ -214,7 +216,12 @@
 			elements.each(function(i, o) {
 				if(i === selected) {
 					$(o).click();
-					document.location = $(o).attr('href');
+
+					if($(o).attr('target').toString() === '_blank') {
+						var win = window.open($(o).attr('href'), '_blank');
+						win.focus();
+					}
+					else document.location = $(o).attr('href');
 				}
 			});
 		});
@@ -223,6 +230,13 @@
 
 		input.on('change keyup keydown paste', function() {
 			list.html('');
+
+			if($(this).val() === ' ') $(this).val('');
+
+			if($(this).val().indexOf('/') === 0)
+				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />'
+				            + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + $(this).val().trim() + '</a>'
+				            + '</li>');
 
 			/* Commands */
 			var command = getCommand($(this).val());
@@ -236,6 +250,9 @@
 			matches.forEach(function(o) {
 				list.append('<li>' + o.iconHTML + '<a href="' + o.link + '">' + o.txt + '</a></li>')
 			});
+
+			var google_link = 'http://google.com/search?q=' + encodeURIComponent($(this).val());
+			list.append('<li><a href="' + google_link + '" target="_blank">Search Google for "' + $(this).val() + '"</a></li>');
 
 			setSelected();
 		});

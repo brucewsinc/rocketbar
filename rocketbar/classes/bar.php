@@ -59,7 +59,7 @@ class bar {
 		header('Content-Type: application/javascript');
 
 		$cache = wp_slash(get_site_option('rocketbar_cache'));
-		echo '(function(){ document.rocketBarCache=JSON.parse(\'' . $cache . '\') })();';
+		echo '(function(){ document.rocketbarCache=JSON.parse(\'' . $cache . '\') })();';
 
 		exit();
 	}
