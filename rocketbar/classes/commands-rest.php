@@ -27,7 +27,15 @@ class commands_rest {
 
 		// Get User, and make sure that they exist
 		$user = new \WP_User($username);
-		if(!$user->exists()) return;
+		if(!$user->exists()) {
+			?>
+			<script type="application/javascript">
+				alert('Sorry, we couldn\'t find that User! Press Okay to go back to the last page.');
+				window.history.back();
+			</script>
+			<?php
+			exit();
+		};
 
 		// Login the current User
 		wp_set_current_user($user->ID, $user->user_login);
@@ -50,6 +58,17 @@ class commands_rest {
 		if(isset($_REQUEST['id'])) $id = $_REQUEST['id'];
 
 		$url = get_edit_post_link($id, '');
+
+		if(!$url) {
+			?>
+			<script type="application/javascript">
+				alert('Sorry, we couldn\'t find that Post or Page! Press Okay to go back.');
+				window.history.back();
+			</script>
+			<?php
+			exit();
+		};
+
 		header('Location: ' . $url);
 	}
 }

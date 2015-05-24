@@ -148,7 +148,7 @@
 		getCommand = function(pat) {
 			if(!pat.trim().length) return;
 
-			var firstPart = pat.split(' ')[0].toLowerCase(),
+			var firstPart = pat.trim().split(' ')[0].toLowerCase(),
 				theRest = pat.replace(firstPart, '').trim();
 
 			var theCommand = false;
@@ -156,13 +156,10 @@
 			for(var i in commands) {
 				if(commands.hasOwnProperty(i)) {
 					var o = commands[i];
-					if(theCommand) return;
+					if(theCommand) continue;
 
-					if(o.command.indexOf(firstPart) === 0) {
-						console.log(firstPart);
-
-						if(theRest.length)
-							o.dynamicLink = o.url + o.start + o.param + '=' + encodeURIComponent(theRest);
+					if(i.indexOf(firstPart) === 0) {
+						if(theRest.length && o.param) o.dynamicLink = o.url + o.start + o.param + '=' + encodeURIComponent(theRest);
 						else o.dynamicLink = o.url;
 
 						theCommand = o;
