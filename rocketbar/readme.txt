@@ -10,18 +10,23 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 The quicker page switcher!? Keyboard shortcuts for your WordPress Dashboard.
 
+
 == Description ==
 
-The RocketBar is a new, faster (FREE) way to get around in WordPres. Instead of clicking from page to page, just hit a keyboard shortcut and immediately go where you're headed!
+The RocketBar is a new, faster (FREE) way to get around in WordPress. Instead of clicking from page to page, just hit a keyboard shortcut and immediately
+go where you're headed!
 
-The plugin is designed after the OSX Spotlight Search feature, and uses a keybinding of `SHIFT + SPACE` to open.
+The plugin is designed after the OSX Spotlight Search feature, and uses a keybind of `SHIFT + SPACE` to open.
 
-**But wait, there's more!**
+## Why should you LOVE RocketBar?
 
-RocketBar also supports several commands and shortcuts that do various actions based on where on your site you're at. For example,
-on a WordPress Post or Page? Open RocketBar and type in <code>edit</code>. Hit ENTER and you're now editing the Post or Page you were on.
+RocketBar enables you (the site owner) access to a faster WordPress. With RocketBar, you can spend more time checking analytics and stats, moderating
+comments, and adding content, and less time finding where you need to go.
 
-Check out all of RocketBar's commands! Install now!
+With a robust code base, leveraging WordPress's hosted CSS and jQuery, you won't be slowed down by our bite-sized client-side code base.
+
+Using RocketBar is simple. No setup necessary. Just install and go!
+
 
 == Installation ==
 
@@ -33,7 +38,12 @@ OR
 1. Upload plugin to your `wp-content/plugins` directory
 1. Activate via the WordPress Dashboard
 
+
 == Frequently Asked Questions ==
+
+= What's the keybinding for RocketBar? =
+
+That's `SHIFT + SPACE`. :-)
 
 = Can I use the RocketBar on the front side of my site? =
 
@@ -41,11 +51,12 @@ Yep! You can use it anywhere within your WordPress installation!
 
 = Can my Users / Visitors see the bar? =
 
-No, only Administrators (or, more precisely, User with the `manage_options` Capability) can see the RocketBar
+No, only Administrators (or, more precisely, Users with the `manage_options` Capability) can see the RocketBar
 
 = This plugin made my ability to move around in WordPress too fast. How can I slow down? =
 
 There's no turning back now. You're one of us.
+
 
 == What's Next? ==
 
@@ -53,15 +64,16 @@ To track the development of RocketBar, find us on [GitHub](https://github.com/by
 
 **The following items are being looked at for additions to a future version of RocketBar:**
 
- - ~~Login / Logout Commands~~
- - ~~Navigation via input of URI (i.e. type in `/a/place/on/my/site` and navigate there directly from RocketBar)~~
- - ~~A set of "default" commands / links, based on your usage of the RocketBar~~
- - ~~Command API for personal modifications~~ (This is complete, but yet to be documented.)
- - Bar themeing
+ - Command API for personal modifications (This is complete, but yet to be documented.)
+ - Quick selects (`SHIFT + NUM` to select an option from the list)
+ - Even better fuzzy matching
+ - Plugin-specific integrations (such as BuddyPress, bbPress, and various caching plugins)
+ - Bar Themes
 
 ---
 
 If you would like to suggest an addition or change, tell us in the Support forums!
+
 
 == Screenshots ==
 
