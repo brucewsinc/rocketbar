@@ -66,7 +66,8 @@ If you would like to suggest an addition or change, tell us in the Support forum
 == Screenshots ==
 
 1. The RocketBar administration panel
-1. The RocketBar within the Dashboard
+1. The RocketBar's default links
+1. Example use of The RocketBar
 
 == Changelog ==
 
