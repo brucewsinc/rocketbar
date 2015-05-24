@@ -1,6 +1,6 @@
 (function($) {
 
-	var findMatches;
+	var findMatches, getCommand;
 
 	/**
 	 * Data retrieval
@@ -9,20 +9,17 @@
 		var cache = document.rocketBarCache;
 
 		/* We need to compile a list of searchable titles first */
-		var searchable = [];
+		var searchable = [],
+			commands = document.rocketbarCommands;
 
-		cache.commands = document.rocketbarCommands;
-		console.log(cache.commands);
-
-		for(var cmd in cache.commands) {
-			if(cache.commands.hasOwnProperty(cmd)) {
-				var cmdObj = cache.commands[cmd];
+		// The Commands
+		for(var cmd in commands) {
+			if(commands.hasOwnProperty(cmd)) {
+				var cmdObj = commands[cmd];
 
 				cmdObj.searchableIndex = searchable.length;
 				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
 				cmdObj.link = cmdObj.url;
-
-				searchable.push(cmdObj.description);
 			}
 		}
 
@@ -147,6 +144,34 @@
 
 			return matches;
 		};
+
+		getCommand = function(pat) {
+			if(!pat.trim().length) return;
+
+			var firstPart = pat.split(' ')[0].toLowerCase(),
+				theRest = pat.replace(firstPart, '').trim();
+
+			var theCommand = false;
+
+			for(var i in commands) {
+				if(commands.hasOwnProperty(i)) {
+					var o = commands[i];
+					if(theCommand) return;
+
+					if(o.command.indexOf(firstPart) === 0) {
+						console.log(firstPart);
+
+						if(theRest.length)
+							o.dynamicLink = o.url + o.start + o.param + '=' + encodeURIComponent(theRest);
+						else o.dynamicLink = o.url;
+
+						theCommand = o;
+					}
+				}
+			}
+
+			return theCommand;
+		};
 	};
 
 	/**
@@ -197,11 +222,17 @@
 			});
 		});
 
-		/* Bar initialized */
+		/* Bar Initialized */
 
 		input.on('change keyup keydown paste', function() {
-			var matches = findMatches($(this).val());
 			list.html('');
+
+			/* Commands */
+			var command = getCommand($(this).val());
+			if(command) list.append('<li>' + command.iconHTML + '<a href="' + command.dynamicLink + '">' + command.description + '</a></li>');
+
+			/* Regular Links */
+			var matches = findMatches($(this).val());
 
 			matches = matches.slice(0, 10);
 
