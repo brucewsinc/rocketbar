@@ -251,6 +251,7 @@
 			list.html('');
 
 			if($(this).val() === ' ') $(this).val('');
+			if($(this).val() === '') return doDefaults();
 
 			if($(this).val().indexOf('/') === 0)
 				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />'
@@ -276,6 +277,26 @@
 			setSelected();
 		});
 
+		var doDefaults = function() {
+			list.html('');
+
+			var dashboard = findMatches('Dashboard Home')[0];
+			list.append('<li>' + dashboard.iconHTML + '<a href="' + dashboard.link + '">' + dashboard.txt + '</a></li>');
+
+			var pages = findMatches('Pages All Pages')[0];
+			list.append('<li>' + pages.iconHTML + '<a href="' + pages.link + '">' + pages.txt + '</a></li>');
+
+			var users = findMatches('Users All users')[0];
+			list.append('<li>' + users.iconHTML + '<a href="' + users.link + '">' + users.txt + '</a></li>');
+
+			var settings = findMatches('Settings General')[0];
+			list.append('<li>' + settings.iconHTML + '<a href="' + settings.link + '">' + settings.txt + '</a></li>');
+
+			var help = findMatches('Tools RocketBar')[0],
+				iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '"  style="fill: white; width: 20px; height: 20px;" />';
+			list.append('<li>' + iconHTML + '<a href="' + help.link + '"><strong>Help -- Commands / Key Binds</strong></a></li>');
+		};
+
 		/* Keybind */
 		$(document).on('keydown', function(e) {
 			// e.shiftKey
@@ -294,11 +315,20 @@
 
 		/* Utility functions */
 		var setSelected = function() {
+			var maxIndex = 0;
+
 			list.find('li').each(function(i, o) {
 				if(i === selected)
 					$(o).addClass('selected');
 				else $(o).removeClass('selected');
+
+				if(i > maxIndex) maxIndex = i;
 			});
+
+			if(selected > maxIndex) {
+				selected = maxIndex;
+				setSelected();
+			}
 		};
 
 		var barIsVisible = function() {
