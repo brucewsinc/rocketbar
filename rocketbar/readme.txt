@@ -85,6 +85,7 @@ If you would like to suggest an addition or change, tell us in the Support forum
 = 150525 =
 * Fixed bug where opening RocketBar put a space into the search field
 * Fixed bug where you could go too far down with the `arrow down` key
+* NEW: RocketBar now has documentation on the current commands available under `Tools -> RocketBar`.
 * NEW: Search Google Feature -- As a default feature, RocketBar will now give you the option to search for anything you put into the bar
 * NEW: Navigate to -- Type in `/`, and URI afterwards and hit `ENTER`. Now you'll go to that area of your site. :-)
 * NEW: Default links when opening the RocketBar.
