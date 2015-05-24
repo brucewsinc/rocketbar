@@ -53,10 +53,10 @@ To track the development of RocketBar, find us on [GitHub](https://github.com/by
 
 **The following items are being looked at for additions to a future version of RocketBar:**
 
- - Login / Logout Commands
- - Navigation via input of URI (i.e. type in `/a/place/on/my/site` and navigate there directly from RocketBar)
- - A set of "default" commands / links, based on your usage of the RocketBar
- - Command API for personal modifications
+ - ~~Login / Logout Commands~~
+ - ~~Navigation via input of URI (i.e. type in `/a/place/on/my/site` and navigate there directly from RocketBar)~~
+ - ~~A set of "default" commands / links, based on your usage of the RocketBar~~
+ - ~~Command API for personal modifications~~ (This is complete, but yet to be documented.)
  - Bar themeing
 
 ---
