@@ -1,14 +1,13 @@
 (function($) {
 
-	var findMatches, getCommand;
-
-	var baseUrl = document.rocketbarBaseURL;
+	var findMatches, getCommand, baseUrl;
 
 	/**
 	 * Data retrieval
 	 */
 	var data = function() {
 		var cache = document.rocketbarCache;
+		baseUrl = document.rocketbarBaseURL;
 
 		/* We need to compile a list of searchable titles first */
 		var searchable = [],
@@ -20,7 +19,7 @@
 				var cmdObj = commands[cmd];
 
 				cmdObj.searchableIndex = searchable.length;
-				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
+				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;"></div>';
 				cmdObj.link = cmdObj.url;
 			}
 		}
@@ -80,6 +79,7 @@
 			}
 		}
 
+		/* Submenus, used in conjunction with toplevel menus. */
 		for(var slug in cache.submenu) {
 			if(cache.submenu.hasOwnProperty(slug)) {
 				var submenus = cache.submenu[slug],
@@ -105,6 +105,13 @@
 			}
 		}
 
+		/**
+		 * Finds object in cache with the correct .searchableIndex
+		 *
+		 * @param i
+		 * @param obj
+		 * @returns {*}
+		 */
 		var findByIndex = function(i, obj) {
 			if(!typeof i === 'number' || typeof obj !== 'object')
 				return false;
@@ -147,6 +154,12 @@
 			return matches;
 		};
 
+		/**
+		 * Finds the most likely command that the User is trying to use based on pattern
+		 *
+		 * @param pat
+		 * @returns {boolean}
+		 */
 		getCommand = function(pat) {
 			if(!pat.trim().length) return;
 
@@ -185,14 +198,15 @@
 		$('body').append(bar);
 
 		/* Objects */
-
 		var input = $('#rocketbar'),
 			list = $('#rocketbar-list');
 
 		/* Current selected */
-
 		var selected = 0; // Defaults to 0
 
+		/**
+		 * UP / DOWN Arrows
+		 */
 		$(document).on('keyup', function(e) {
 			if(!barIsVisible()) return selected = 0;
 
@@ -206,8 +220,11 @@
 			setSelected();
 		});
 
+		/**
+		 * When the User presses ENTER
+		 */
 		input.on('keyup', function(e) {
-			if(e.keyCode !== 13) return;
+			if(e.keyCode !== 13) return; // Enter key code is 13
 
 			e.preventDefault();
 
@@ -216,8 +233,10 @@
 			elements.each(function(i, o) {
 				if(i === selected) {
 					$(o).click();
+					var target = $(o).attr('target');
+					target = (target) ? target.toString() : false;
 
-					if($(o).attr('target').toString() === '_blank') {
+					if(target === '_blank') {
 						var win = window.open($(o).attr('href'), '_blank');
 						win.focus();
 					}
@@ -258,7 +277,6 @@
 		});
 
 		/* Keybind */
-
 		$(document).on('keydown', function(e) {
 			// e.shiftKey
 			// e.altKey
@@ -275,7 +293,6 @@
 		});
 
 		/* Utility functions */
-
 		var setSelected = function() {
 			list.find('li').each(function(i, o) {
 				if(i === selected)
@@ -289,6 +306,7 @@
 		};
 	};
 
+	// Initialization via jQuery
 	$(document).ready(data);
 	$(document).ready(bar);
 })(jQuery);

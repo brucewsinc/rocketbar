@@ -60,7 +60,7 @@ class commands {
 		$print_js = function () {
 			$obj = json_encode($GLOBALS['rocketbar_commands']);
 			echo '<script>
-				function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\');
+				(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\');
 				document.rocketbarIcon=\'' . plugin()->url . '/client-s/rocket.svg' . '\';
 				document.rocketbarBaseURL=\'' . site_url() . '\'; })();
 			</script>';
