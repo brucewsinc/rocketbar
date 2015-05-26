@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: switch, rocketbar, spotlight, search, quick, fast, dashboard, commands, admin, widget
 Requires at least: 3.2
 Tested up to: 4.2.2
-Stable tag: 150525
+Stable tag: 150526
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ go where you're headed!
 
 The plugin is designed after the OSX Spotlight Search feature, and uses a keybind of `SHIFT + SPACE` to open.
 
-## Why should you LOVE RocketBar?
+### Why should you LOVE RocketBar?
 
 RocketBar enables you (the site owner) access to a faster WordPress. With RocketBar, you can spend more time checking analytics and stats, moderating
 comments, and adding content, and less time finding where you need to go.
@@ -26,6 +26,22 @@ comments, and adding content, and less time finding where you need to go.
 With a robust code base, leveraging WordPress's hosted CSS and jQuery, you won't be slowed down by our bite-sized client-side code base.
 
 Using RocketBar is simple. No setup necessary. Just install and go!
+
+### What's Next?
+
+To track the development of RocketBar, find us on [GitHub](https://github.com/byjinx/rocketbar)!
+
+**The following items are being looked at for additions to a future version of RocketBar:**
+
+ - Command API for personal modifications (This is complete, but yet to be documented.)
+ - Quick selects (`SHIFT + NUM` to select an option from the list)
+ - Even better fuzzy matching
+ - Plugin-specific integrations (such as BuddyPress, bbPress, and various caching plugins)
+ - Bar Themes
+
+---
+
+If you would like to suggest an addition or change, tell us in the Support forums!
 
 
 == Installation ==
@@ -56,23 +72,6 @@ No, only Administrators (or, more precisely, Users with the `manage_options` Cap
 = This plugin made my ability to move around in WordPress too fast. How can I slow down? =
 
 There's no turning back now. You're one of us.
-
-
-== What's Next? ==
-
-To track the development of RocketBar, find us on [GitHub](https://github.com/byjinx/rocketbar)!
-
-**The following items are being looked at for additions to a future version of RocketBar:**
-
- - Command API for personal modifications (This is complete, but yet to be documented.)
- - Quick selects (`SHIFT + NUM` to select an option from the list)
- - Even better fuzzy matching
- - Plugin-specific integrations (such as BuddyPress, bbPress, and various caching plugins)
- - Bar Themes
-
----
-
-If you would like to suggest an addition or change, tell us in the Support forums!
 
 
 == Screenshots ==

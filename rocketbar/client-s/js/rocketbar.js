@@ -255,7 +255,7 @@
 
 			if($(this).val().indexOf('/') === 0)
 				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />'
-				            + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + $(this).val().trim() + '</a>'
+				            + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + baseUrl + $(this).val().trim() + '</a>'
 				            + '</li>');
 
 			/* Commands */
@@ -272,7 +272,7 @@
 			});
 
 			var google_link = 'http://google.com/search?q=' + encodeURIComponent($(this).val());
-			list.append('<li><a href="' + google_link + '" target="_blank">Search Google for "' + $(this).val() + '"</a></li>');
+			list.append('<li><a href="' + google_link + '" target="_blank"><strong>Search Google for: <code>' + $(this).val() + '</code></strong></a></li>');
 
 			setSelected();
 		});
