@@ -102,6 +102,10 @@ There's no turning back now. You're one of us.
 * NEW: Navigate to -- Type in `/`, and URI afterwards and hit `ENTER`. Now you'll go to that area of your site. :-)
 * NEW: Default links when opening the RocketBar.
 
+= 150526 =
+* Some subtle changes to command descriptions
+* Updating the way we search via Google
+
 == Upgrade Notice ==
 
 = 150517 =
@@ -118,3 +122,6 @@ Some hotfixes to commands + a bit of an upgrade!
 
 = 150525 =
 Bug fixes, New features + Maintenance Release
+
+= 150526 =
+Maintenance Release
