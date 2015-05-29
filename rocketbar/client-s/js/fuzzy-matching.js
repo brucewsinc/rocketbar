@@ -19,7 +19,9 @@
 			}
 
 			if (pos === search.length) {
-				if (text.toLowerCase().indexOf(srch.replace(/\s/g, '').toLowerCase()) > -1) priority += 15;
+				if (text.toLowerCase().indexOf(srch.replace(/\s/g, '').toLowerCase()) > -1) priority += 8;
+				if (text.toLowerCase().indexOf(srch.replace(/\s/g, '').toLowerCase()) === 0) priority += 7;
+
 				return {
 					priority: priority,
 					matches: matches,
