@@ -63,6 +63,14 @@ class admin_page {
 					<code>login</code> - Use this command, and a WordPress username to log into any User on your site.
 					                   You'll be brought to the selected User's profile.
 				</li>
+
+				<li>
+					<code>home</code> - Brings you to your site's homepage
+				</li>
+
+				<li>
+					<code>g</code> - A shortcut to Google Search. Type <code>g Your search terms</code> to quickly search google.
+				</li>
 			</ul>
 		</div>
 	<?php

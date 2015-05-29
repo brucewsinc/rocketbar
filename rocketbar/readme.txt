@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: switch, rocketbar, spotlight, search, quick, fast, dashboard, commands, admin, widget
 Requires at least: 3.2
 Tested up to: 4.2.2
-Stable tag: 150526
+Stable tag: 150529
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -106,6 +106,11 @@ There's no turning back now. You're one of us.
 * Some subtle changes to command descriptions
 * Updating the way we search via Google
 
+= 150529 =
+* Updating fuzzy matching for better search results
+* Adding `home` command for easy access to site home url
+* Adding `g` command for direct access to Google Search
+
 == Upgrade Notice ==
 
 = 150517 =
@@ -124,4 +129,7 @@ Some hotfixes to commands + a bit of an upgrade!
 Bug fixes, New features + Maintenance Release
 
 = 150526 =
+Maintenance Release
+
+= 150529 =
 Maintenance Release
