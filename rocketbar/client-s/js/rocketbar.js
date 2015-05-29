@@ -14,8 +14,8 @@
 			commands = document.rocketbarCommands;
 
 		// The Commands
-		for(var cmd in commands) {
-			if(commands.hasOwnProperty(cmd)) {
+		for (var cmd in commands) {
+			if (commands.hasOwnProperty(cmd)) {
 				var cmdObj = commands[cmd];
 
 				cmdObj.searchableIndex = searchable.length;
@@ -25,8 +25,8 @@
 		}
 
 		// Compiling Pages
-		for(var id in cache.pages) {
-			if(cache.pages.hasOwnProperty(id)) {
+		for (var id in cache.pages) {
+			if (cache.pages.hasOwnProperty(id)) {
 				var page = cache.pages[id];
 				page.searchableIndex = searchable.length;
 				page.iconHTML = '<div class="wp-menu-image dashicons-before dashicons-admin-page"><br></div>';
@@ -36,8 +36,8 @@
 		}
 
 		// Compiling Categories
-		for(id in cache.taxonomies) {
-			if(cache.taxonomies.hasOwnProperty(id)) {
+		for (id in cache.taxonomies) {
+			if (cache.taxonomies.hasOwnProperty(id)) {
 				var tax = cache.taxonomies[id];
 				tax.searchableIndex = searchable.length;
 				tax.iconHTML = '<div class="wp-menu-image dashicons-before dashicons-admin-post"><br></div>';
@@ -50,24 +50,24 @@
 		var menuNamesBySlug = {},
 			menuIconsBySlug = {};
 
-		for(var priority in cache.menu) {
-			if(cache.menu.hasOwnProperty(priority)) {
+		for (var priority in cache.menu) {
+			if (cache.menu.hasOwnProperty(priority)) {
 				var menu = cache.menu[priority];
 				menu.searchableIndex = searchable.length;
 
-				if(menu[6] && !menu[6].match(/^data:image|^http/i)) // Dashicon class
+				if (menu[6] && !menu[6].match(/^data:image|^http/i)) // Dashicon class
 					menu.iconHTML = '<div class="wp-menu-image dashicons-before ' + menu[6] + '"></div>';
-				else if(menu[6] && menu[6].match(new RegExp('data:image\/svg', 'i')))
+				else if (menu[6] && menu[6].match(new RegExp('data:image\/svg', 'i')))
 					menu.iconHTML = '<div class="wp-menu-image svg" style="background-image: url(\'' + menu[6] + '\') !important; width: 20px; height: 20px; background-size: contain; background-repeat: no-repeat;"></div>';
-				else if(menu[6] && menu[6].match(new RegExp('http', 'i')))
+				else if (menu[6] && menu[6].match(new RegExp('http', 'i')))
 					menu.iconHTML = '<img src="' + menu[6] + '" style="width: 18px; height: 18px; vertical-align: top;" />';
 				else menu.iconHTML = '';
 
 				var menu_slug = menu[2];
-				if(menu_slug.match(/\.php/)) menu.link = cache.admin_url + menu_slug;
+				if (menu_slug.match(/\.php/)) menu.link = cache.admin_url + menu_slug;
 				else menu.link = cache.admin_url + 'admin.php?page=' + menu_slug;
 
-				if(menu[0].length) {
+				if (menu[0].length) {
 					var name = menu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 
 					//searchable.push(name); // Some menus have HTML in them, and a trailing number
@@ -80,22 +80,22 @@
 		}
 
 		/* Submenus, used in conjunction with toplevel menus. */
-		for(var slug in cache.submenu) {
-			if(cache.submenu.hasOwnProperty(slug)) {
+		for (var slug in cache.submenu) {
+			if (cache.submenu.hasOwnProperty(slug)) {
 				var submenus = cache.submenu[slug],
 					menuName = menuNamesBySlug[slug];
 
-				for(id in submenus) {
-					if(submenus.hasOwnProperty(id)) {
+				for (id in submenus) {
+					if (submenus.hasOwnProperty(id)) {
 						var submenu = submenus[id];
 
 						menu_slug = submenu[2];
-						if(menu_slug.match(/\.php/)) submenu.link = cache.admin_url + menu_slug;
+						if (menu_slug.match(/\.php/)) submenu.link = cache.admin_url + menu_slug;
 						else submenu.link = cache.admin_url + 'admin.php?page=' + menu_slug;
 
 						name = submenu[0].replace(/<(?:.|\n)*?>/gm, '').replace(/\ \d$/, '');
 
-						if(name.length) {
+						if (name.length) {
 							submenu.searchableIndex = searchable.length;
 							submenu.iconHTML = menuIconsBySlug[slug];
 							searchable.push(menuName + ' → ' + name);
@@ -113,16 +113,16 @@
 		 * @returns {*}
 		 */
 		var findByIndex = function(i, obj) {
-			if(!typeof i === 'number' || typeof obj !== 'object')
+			if (!typeof i === 'number' || typeof obj !== 'object')
 				return false;
 
-			if(obj.hasOwnProperty('searchableIndex') && obj.searchableIndex === i) return obj;
+			if (obj.hasOwnProperty('searchableIndex') && obj.searchableIndex === i) return obj;
 
-			for(var property in obj) {
-				if(obj.hasOwnProperty(property) && typeof obj[property] === 'object') {
+			for (var property in obj) {
+				if (obj.hasOwnProperty(property) && typeof obj[property] === 'object') {
 					var r = findByIndex(i, obj[property]);
 
-					if(r !== false) return r;
+					if (r !== false) return r;
 				}
 			}
 
@@ -146,7 +146,7 @@
 				matches[i].priority = o.priority;
 
 				o.text.split('').forEach(function(ch, p) {
-					if(o.matches.indexOf(p) !== -1) matches[i].txt += '<strong>' + ch + '</strong>';
+					if (o.matches.indexOf(p) !== -1) matches[i].txt += '<strong>' + ch + '</strong>';
 					else matches[i].txt += ch;
 				});
 			});
@@ -161,20 +161,20 @@
 		 * @returns {boolean}
 		 */
 		getCommand = function(pat) {
-			if(!pat.trim().length) return;
+			if (!pat.trim().length) return;
 
 			var firstPart = pat.trim().split(' ')[0].toLowerCase(),
 				theRest = pat.replace(firstPart, '').trim();
 
 			var theCommand = false;
 
-			for(var i in commands) {
-				if(commands.hasOwnProperty(i)) {
+			for (var i in commands) {
+				if (commands.hasOwnProperty(i)) {
 					var o = commands[i];
-					if(theCommand) continue;
+					if (theCommand) continue;
 
-					if(i.indexOf(firstPart) === 0) {
-						if(theRest.length && o.param) o.dynamicLink = o.url + o.start + o.param + '=' + encodeURIComponent(theRest);
+					if (i.indexOf(firstPart) === 0) {
+						if (theRest.length && o.param) o.dynamicLink = o.url + o.start + o.param + '=' + encodeURIComponent(theRest);
 						else o.dynamicLink = o.url;
 
 						theCommand = o;
@@ -208,14 +208,14 @@
 		 * UP / DOWN Arrows
 		 */
 		$(document).on('keyup', function(e) {
-			if(!barIsVisible()) return selected = 0;
+			if (!barIsVisible()) return selected = 0;
 
 			e.preventDefault();
 
-			if(e.keyCode === 38) selected--;
-			else if(e.keyCode === 40) selected++;
+			if (e.keyCode === 38) selected--;
+			else if (e.keyCode === 40) selected++;
 
-			if(selected < 0) selected = 0;
+			if (selected < 0) selected = 0;
 
 			setSelected();
 		});
@@ -224,23 +224,22 @@
 		 * When the User presses ENTER
 		 */
 		input.on('keyup', function(e) {
-			if(e.keyCode !== 13) return; // Enter key code is 13
+			if (e.keyCode !== 13) return; // Enter key code is 13
 
 			e.preventDefault();
 
 			var elements = $('#rocketbar-list > li > a');
 
 			elements.each(function(i, o) {
-				if(i === selected) {
+				if (i === selected) {
 					$(o).click();
 					var target = $(o).attr('target');
 					target = (target) ? target.toString() : false;
 
-					if(target === '_blank') {
+					if (target === '_blank') {
 						var win = window.open($(o).attr('href'), '_blank');
 						win.focus();
-					}
-					else document.location = $(o).attr('href');
+					} else document.location = $(o).attr('href');
 				}
 			});
 		});
@@ -250,17 +249,15 @@
 		input.on('change keyup keydown paste', function() {
 			list.html('');
 
-			if($(this).val() === ' ') $(this).val('');
-			if($(this).val() === '') return doDefaults();
+			if ($(this).val() === ' ') $(this).val('');
+			if ($(this).val() === '') return doDefaults();
 
-			if($(this).val().indexOf('/') === 0)
-				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />'
-				            + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + baseUrl + $(this).val().trim() + '</a>'
-				            + '</li>');
+			if ($(this).val().indexOf('/') === 0)
+				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />' + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + baseUrl + $(this).val().trim() + '</a>' + '</li>');
 
 			/* Commands */
 			var command = getCommand($(this).val());
-			if(command) list.append('<li>' + command.iconHTML + '<a href="' + command.dynamicLink + '">' + command.description + '</a></li>');
+			if (command) list.append('<li>' + command.iconHTML + '<a href="' + command.dynamicLink + '">' + command.description + '</a></li>');
 
 			/* Regular Links */
 			var matches = findMatches($(this).val());
@@ -304,11 +301,11 @@
 			// e.ctrlKey
 			// e.keyCode
 
-			if(e.shiftKey && e.keyCode === 32) $(bar).toggle();
-			if(e.keyCode === 27 && barIsVisible()) $(bar).hide();
+			if (e.shiftKey && e.keyCode === 32) $(bar).toggle();
+			if (e.keyCode === 27 && barIsVisible()) $(bar).hide();
 
-			if(!barIsVisible()) input.val('');
-			if(input.val() === ' ') input.val('');
+			if (!barIsVisible()) input.val('');
+			if (input.val() === ' ') input.val('');
 
 			input.focus();
 		});
@@ -318,14 +315,14 @@
 			var maxIndex = 0;
 
 			list.find('li').each(function(i, o) {
-				if(i === selected)
+				if (i === selected)
 					$(o).addClass('selected');
 				else $(o).removeClass('selected');
 
-				if(i > maxIndex) maxIndex = i;
+				if (i > maxIndex) maxIndex = i;
 			});
 
-			if(selected > maxIndex) {
+			if (selected > maxIndex) {
 				selected = maxIndex;
 				setSelected();
 			}

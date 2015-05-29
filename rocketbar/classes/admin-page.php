@@ -12,6 +12,7 @@ class admin_page {
 	 * Options save mechanism
 	 */
 	public static function maybe_save_opts() {
+
 	}
 
 	/**

@@ -85,5 +85,8 @@ class commands {
 		global $post;
 		if(is_single() || is_page()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID($post->ID)), 'Edit this Post/Page (or specify ID)', '[id]');
 		else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
+
+		self::add_new('home', home_url(), 'Go to your Home Page');
+		self::add_new('g', 'https://google.com/', 'Search Google', '<q>');
 	}
 }
