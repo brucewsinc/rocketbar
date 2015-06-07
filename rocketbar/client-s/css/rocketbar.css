@@ -87,7 +87,7 @@
 }
 
 #rocketbar-list .selected::after {
-	content: '↵';
+	content: '\21B5';
 	float: right;
 	margin-top: 3px;
 	font-size: 16px;

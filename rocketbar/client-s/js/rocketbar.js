@@ -6,12 +6,12 @@
 	 * Data retrieval
 	 */
 	var data = function() {
-		var cache = document.rocketbarCache;
-		baseUrl = document.rocketbarBaseURL;
+		var cache = document.rocketBar.cache;
+		baseUrl = document.rocketBar.baseURL;
 
 		/* We need to compile a list of searchable titles first */
 		var searchable = [],
-			commands = document.rocketbarCommands;
+			commands = document.rocketBar.commands;
 
 		// The Commands
 		for (var cmd in commands) {
@@ -19,7 +19,7 @@
 				var cmdObj = commands[cmd];
 
 				cmdObj.searchableIndex = searchable.length;
-				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;"></div>';
+				cmdObj.iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketBar.icon + '" style="fill: white; width: 20px; height: 20px;"></div>';
 				cmdObj.link = cmdObj.url;
 			}
 		}
@@ -253,7 +253,7 @@
 			if ($(this).val() === '') return doDefaults();
 
 			if ($(this).val().indexOf('/') === 0)
-				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketbarIcon + '" style="fill: white; width: 20px; height: 20px;" />' + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + baseUrl + $(this).val().trim() + '</a>' + '</li>');
+				list.append('<li><img class="wp-menu-image svg" src="' + document.rocketBar.icon + '" style="fill: white; width: 20px; height: 20px;" />' + '<a href="' + baseUrl + $(this).val() + '"/>Navigate to: ' + baseUrl + $(this).val().trim() + '</a>' + '</li>');
 
 			/* Commands */
 			var command = getCommand($(this).val());
@@ -290,8 +290,8 @@
 			list.append('<li>' + settings.iconHTML + '<a href="' + settings.link + '">' + settings.txt + '</a></li>');
 
 			var help = findMatches('Tools RocketBar')[0],
-				iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketbarIcon + '"  style="fill: white; width: 20px; height: 20px;" />';
-			list.append('<li>' + iconHTML + '<a href="' + help.link + '"><strong>Help -- Commands / Key Binds</strong></a></li>');
+				iconHTML = '<img class="wp-menu-image svg" src="' + document.rocketBar.icon + '"  style="fill: white; width: 20px; height: 20px;" />';
+			list.append('<li>' + iconHTML + '<a href="' + help.link + '"><strong>Help — Commands / Key Binds</strong></a></li>');
 		};
 
 		/* Keybind */

@@ -59,10 +59,12 @@ class commands {
 
 		$print_js = function () {
 			$obj = json_encode($GLOBALS['rocketbar_commands']);
-			echo '<script>
-				(function(){ document.rocketbarCommands=JSON.parse(\'' . $obj . '\');
-				document.rocketbarIcon=\'' . plugin()->url . '/client-s/rocket.svg' . '\';
-				document.rocketbarBaseURL=\'' . site_url() . '\'; })();
+			echo '<script type="application/javascript">
+				(function(){
+					document.rocketBar.commands=JSON.parse(\'' . $obj . '\');
+					document.rocketBar.icon=\'' . plugin()->url . '/client-s/rocket.svg' . '\';
+					document.rocketBar.baseURL=\'' . site_url() . '\';
+				})();
 			</script>';
 		};
 
@@ -87,6 +89,6 @@ class commands {
 		else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
 
 		self::add_new('home', home_url(), 'Go to your Home Page');
-		self::add_new('g', 'https://google.com/', 'Search Google', '<q>');
+		self::add_new('g', 'https://google.com/', 'Search Google', '<query>');
 	}
 }
