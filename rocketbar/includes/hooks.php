@@ -14,7 +14,7 @@ add_action('admin_enqueue_scripts', 'rocketbar\bar::initialize');
 if(!wp_next_scheduled('rocketbar_gather_data'))
 	wp_schedule_event(time(), 'hourly', 'rocketbar\bar::gather');
 
-if(!get_site_option('rocketbar_cache', FALSE))
+//if(!get_site_option('rocketbar_cache', FALSE))
 	add_action('admin_init', 'rocketbar\bar::gather');
 
 // Builds dynamic JavaScript file
