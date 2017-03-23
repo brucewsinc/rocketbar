@@ -55,7 +55,7 @@ class commands {
 	}
 
 	public static function generate_js() {
-		if(!current_user_can('manage_options')) return;
+		if(!current_user_can('manage_options') && (!defined('ROCKETBAR_ALLOW_ALL') || ROCKETBAR_ALLOW_ALL === FALSE)) return;
 
 		$print_js = function () {
 			$obj = json_encode($GLOBALS['rocketbar_commands']);
@@ -84,8 +84,7 @@ class commands {
 		self::add_new('login', site_url('/?_rocketbar_login_cmd=1'), 'Login to the specified User', '<username>');
 
 		// Edit Post/Page Command
-		global $post;
-		if(is_single() || is_page()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID($post->ID)), 'Edit this Post/Page (or specify ID)', '[id]');
+		if(is_single() || is_page()) self::add_new('edit', site_url('/?_rocketbar_edit_page=1&default_id=' . get_the_ID()), 'Edit this Post/Page (or specify ID)', '[id]');
 		else self::add_new('edit', site_url('/?_rocketbar_edit_page=1'), 'Edit a specified Post/Page', '<id>');
 
 		self::add_new('home', home_url(), 'Go to your Home Page');

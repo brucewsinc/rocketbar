@@ -7,7 +7,7 @@ class bar {
 	 * Initializes Client-side code for the RocketBar
 	 */
 	public static function initialize() {
-		if(!current_user_can('manage_options')) return;
+		if(!current_user_can('manage_options') && (!defined('ROCKETBAR_ALLOW_ALL') || ROCKETBAR_ALLOW_ALL === FALSE)) return;
 
 		wp_enqueue_script('fuzzy-matching', plugin()->url . '/client-s/js/fuzzy-matching.min.js', TRUE);
 		wp_enqueue_script('rocketbar-cache', site_url('/?_rocketbar_cache=1'), TRUE);
@@ -82,7 +82,7 @@ class bar {
 	 * Builds JavaScript to give client-side code access to the cached information used to build the bar
 	 */
 	public static function build_js_file() {
-		if(!isset($_GET['_rocketbar_cache']) || !current_user_can('manage_options')) return;
+		if(!isset($_GET['_rocketbar_cache']) || (!current_user_can('manage_options') && (!defined('ROCKETBAR_ALLOW_ALL') || ROCKETBAR_ALLOW_ALL === FALSE))) return;
 
 		header('Content-Type: application/javascript');
 

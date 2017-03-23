@@ -4,7 +4,7 @@ namespace rocketbar;
 
 class commands_rest {
 	public function __construct() {
-		if(!current_user_can('manage_options')) return; // Commands are only available to administrators
+		if(!current_user_can('manage_options') && (!defined('ROCKETBAR_ALLOW_ALL') || ROCKETBAR_ALLOW_ALL === FALSE)) return; // Commands are only available to administrators
 
 		$methods = get_class_methods('rocketbar\commands_rest');
 
@@ -55,20 +55,20 @@ class commands_rest {
 		if(!isset($_REQUEST['default_id'])) $id = 0;
 		else $id = (int)$_REQUEST['default_id'];
 
-		if(isset($_REQUEST['id'])) $id = $_REQUEST['id'];
+		if(isset($_REQUEST['id'])) $id = (int)$_REQUEST['id'];
 
 		$url = get_edit_post_link($id, '');
 
 		if(!$url) {
 			?>
 			<script type="application/javascript">
-				alert('Sorry, we couldn\'t find that Post or Page! Press Okay to go back.');
+				alert('Sorry, we couldn\'t find Post or Page <?php echo $id; ?>! Press Okay to go back.');
 				window.history.back();
 			</script>
 			<?php
 			exit();
-		};
-
-		header('Location: ' . $url);
+		} else {
+			header('Location: ' . $url);
+		}
 	}
 }

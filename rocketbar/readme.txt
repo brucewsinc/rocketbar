@@ -67,7 +67,7 @@ Yep! You can use it anywhere within your WordPress installation!
 
 = Can my Users / Visitors see the bar? =
 
-No, only Administrators (or, more precisely, Users with the `manage_options` Capability) can see the RocketBar
+No, only Administrators (or, more precisely, Users with the `manage_options` Capability) can see the RocketBar unless constant `ROCKETBAR_ALLOW_ALL` is set to `TRUE`.
 
 = This plugin made my ability to move around in WordPress too fast. How can I slow down? =
 
